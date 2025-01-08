@@ -9,14 +9,12 @@ body {
 /* Header */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #003366;
-    color: white;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    justify-content: space-between;
+    padding: 0.5rem 1rem; /* Reduce padding for smaller header */
+    box-sizing: border-box;
+    width: 100%;
+    height: auto; /* Let the content define the height */
 }
 
 header .logo {
@@ -38,14 +36,14 @@ header nav a:hover {
 /* Layout */
 .layout {
     display: flex;
-    margin: 0;
+    align-items: flex-start;
 }
 
 /* Sidebar */
 .sidebar {
     background-color: #f8f9fa;
-    width: 300px;
-    padding: 20px;
+    width: 220px;
+    padding: 30px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     height: 100vh;
 }
@@ -74,12 +72,13 @@ header nav a:hover {
     list-style: none;
     padding: 0;
 }
-
 .sidebar ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #333; /* Dark gray/black */
+    margin-bottom: 10px;
 }
 
 .sidebar ul li a {
@@ -96,7 +95,7 @@ header nav a:hover {
 .sidebar ul li .icon {
     width: 20px;
     height: 20px;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 /* Main Content */
@@ -141,5 +140,6 @@ footer {
         font-size: 0.8rem; /* Smaller font */
     }
 }
+
 
 
