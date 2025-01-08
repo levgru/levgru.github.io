@@ -47,15 +47,7 @@ header nav a:hover {
     align-items: flex-start;
     position: relative;
 }
-.layout::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 220px; /* Align with the sidebar width */
-    width: 5px;
-    height: 100%;
-    background-color: #003366; /* Blue line color */
-}
+
 
 /* Sidebar */
 .sidebar {
@@ -76,6 +68,7 @@ header nav a:hover {
     height: 120px;
     display: block;
     margin: 0 auto 15px;
+    border: 5px solid #003366; /* Blue frame */
 }
 .sidebar h2 {
     text-align: center;
