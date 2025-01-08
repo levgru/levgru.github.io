@@ -18,8 +18,9 @@ header {
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
+    color: #470000;
 }
 
 header nav a {
@@ -148,18 +149,28 @@ footer {
     margin-bottom: 8px;
   }
   
-  .project-title {
+.project-title {
     margin-right: 8px;
+    color: #470000;
   }
   
-  .toggle-icon {
+.toggle-icon {
     transition: transform 0.2s ease;
+    font-size: 1.5rem; /* increase size */
+    font-weight: bold;
   }
   
-  .project-content {
+.project-content {
     display: none; /* hidden by default */
     margin-left: 20px; /* indent under the title row */
 }
+
+.logo, .papers h2 {
+    font-family: 'Inter', sans-serif;
+    color: #470000; /* Dark gray/black */
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: bold; /* Ensure bold text */
+  }
 
 
 
