@@ -1,5 +1,5 @@
 /* General Styles */
-body {
+body, html {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0.5rem 1rem; /* Reduce padding for smaller header */
     box-sizing: border-box;
     width: 100%;
@@ -37,6 +37,7 @@ header nav a:hover {
 /* Layout */
 .layout {
     display: flex;
+    height: 100%:
     align-items: flex-start;
 }
 
@@ -44,9 +45,13 @@ header nav a:hover {
 .sidebar {
     background-color: #f8f9fa;
     width: 220px;
-    padding: 30px;
+    padding: 20px;
+    box-sizing: border-box;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    height: 100vh;
+    height: 100%;
+    position: fixed; /* Fix to the side */
+    top: 0;
+    left: 0;
 }
 
 .sidebar .profile-pic {
@@ -103,7 +108,7 @@ header nav a:hover {
 main {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 20px; /* Increased spacing */
+    margin-left: 240px; /* Increased spacing */
 }
 
 main h1, main h2 {
@@ -147,6 +152,7 @@ footer {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
+    color: #470000
   }
   
 .project-title {
