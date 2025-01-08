@@ -3,143 +3,122 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdfdfd;
-    color: #444;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
-a {
-    color: #0073e6;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Top Header */
+/* Header */
 header {
-    background-color: #0b3954;
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Smaller padding */
-    position: fixed;
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
     top: 0;
-    width: 100%;
-    height: 60px; /* Reduce height */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 header .logo {
-    font-size: 1.5rem; /* Adjust font size */
-    font-weight: bold;
-    font-family: 'Georgia', serif;
-    color: #fdfdfd;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 header nav a {
     color: white;
+    margin-left: 20px;
     text-decoration: none;
-    margin-left: 15px;
-    font-size: 0.9rem; /* Smaller font size */
-    font-weight: 500;
+    font-size: 1rem;
 }
 
 header nav a:hover {
-    border-bottom: 2px solid #fdfdfd;
+    text-decoration: underline;
 }
 
 /* Layout */
 .layout {
     display: flex;
-    margin-top: 70px; /* Offset for the fixed header */
+    margin: 0;
 }
 
 /* Sidebar */
 .sidebar {
-    background-color: #f1f5f9;
-    color: #333;
-    width: 220px; /* Reduce width */
-    height: 100vh; /* Ensure full height */
+    background-color: #f8f9fa;
+    width: 300px;
     padding: 20px;
-    position: fixed;
-    left: 0;
-    top: 0; /* Align to top */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    z-index: 999; /* Ensure it stays above other content */
+    height: 100vh;
 }
 
 .sidebar .profile-pic {
-    width: 100px; /* Smaller profile picture */
-    height: 100px;
     border-radius: 50%;
-    margin: 0 auto 20px;
-    border: 3px solid #0073e6;
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 auto 15px;
 }
 
-
 .sidebar h2 {
+    text-align: center;
     font-size: 1.2rem;
-    color: #0b3954;
-    margin-bottom: 10px;
+    margin: 10px 0;
+}
+
+.sidebar p {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .sidebar ul li a {
-    color: #0073e6;
+    text-decoration: none;
+    color: #333;
     font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    margin-left: 10px;
 }
 
 .sidebar ul li a:hover {
-    color: #0b3954;
+    color: #0073e6;
 }
 
+.sidebar ul li .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
 
 /* Main Content */
 main {
-    margin-left: 240px; /* Offset slightly larger than sidebar */
-    padding: 20px; /* Add spacing */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: calc(100% - 260px); /* Dynamic width adjustment */
-    margin-top: 70px; /* Account for header height */
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20px; /* Increased spacing */
 }
-
 
 main h1, main h2 {
-    color: #0b3954;
-    margin-top: 0;
+    color: #003366;
 }
 
-.intro p, .projects ul, .papers ul {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
+/* Footer */
 footer {
-    background-color: #0b3954;
-    color: #fdfdfd;
     text-align: center;
     padding: 10px 0;
+    background-color: #003366;
+    color: white;
     margin-top: 20px;
-    font-size: 0.9rem;
 }
+
 
 @media (max-width: 768px) {
     .sidebar {
