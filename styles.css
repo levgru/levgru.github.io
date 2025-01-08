@@ -15,7 +15,9 @@ header {
     box-sizing: border-box;
     width: 100%;
     height: auto; /* Let the content define the height */
+    border-bottom: 5px solid #0073e6; /* Blue line below header */
 }
+
 
 header .logo {
     font-size: 2.5rem;
@@ -41,8 +43,18 @@ header nav a:hover {
 /* Layout */
 .layout {
     display: flex;
-    height: 100%:
+    height: 100%;
     align-items: flex-start;
+    position: relative;
+}
+.layout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 220px; /* Align with the sidebar width */
+    width: 5px;
+    height: 100%;
+    background-color: #0073e6; /* Blue line color */
 }
 
 /* Sidebar */
@@ -64,6 +76,7 @@ header nav a:hover {
     height: 120px;
     display: block;
     margin: 0 auto 15px;
+    border: 5px solid #0073e6; /* Blue frame */
 }
 
 .sidebar h2 {
