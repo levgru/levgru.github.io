@@ -24,16 +24,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    padding: 10px 20px; /* Smaller padding */
     position: fixed;
     top: 0;
     width: 100%;
+    height: 60px; /* Reduce height */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 header .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Adjust font size */
     font-weight: bold;
     font-family: 'Georgia', serif;
     color: #fdfdfd;
@@ -42,8 +43,8 @@ header .logo {
 header nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 1rem;
+    margin-left: 15px;
+    font-size: 0.9rem; /* Smaller font size */
     font-weight: 500;
 }
 
@@ -61,23 +62,25 @@ header nav a:hover {
 .sidebar {
     background-color: #f1f5f9;
     color: #333;
-    width: 250px;
-    min-height: 100vh;
-    padding: 30px;
+    width: 220px; /* Reduce width */
+    height: 100vh; /* Ensure full height */
+    padding: 20px;
     position: fixed;
     left: 0;
-    top: 70px;
+    top: 0; /* Align to top */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    z-index: 999; /* Ensure it stays above other content */
 }
 
 .sidebar .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 100px; /* Smaller profile picture */
+    height: 100px;
     border-radius: 50%;
     margin: 0 auto 20px;
     border: 3px solid #0073e6;
 }
+
 
 .sidebar h2 {
     font-size: 1.2rem;
@@ -108,16 +111,16 @@ header nav a:hover {
 
 
 /* Main Content */
-/* Main Content */
 main {
-    margin-left: 270px; /* Offset for the sidebar */
-    padding: 30px;
+    margin-left: 240px; /* Offset slightly larger than sidebar */
+    padding: 20px; /* Add spacing */
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin-top: 20px;
+    max-width: calc(100% - 260px); /* Dynamic width adjustment */
+    margin-top: 70px; /* Account for header height */
 }
+
 
 main h1, main h2 {
     color: #0b3954;
@@ -137,4 +140,27 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px; /* Smaller width for small screens */
+        padding: 15px;
+    }
+
+    main {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    header {
+        height: 50px; /* Reduce height further */
+        padding: 10px 15px;
+    }
+
+    header nav a {
+        margin-left: 10px;
+        font-size: 0.8rem; /* Smaller font */
+    }
+}
+
 
