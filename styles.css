@@ -1,20 +1,30 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #fdfdfd;
+    color: #444;
+    line-height: 1.6;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Top Header */
 header {
-    background-color: #333;
+    background-color: #0b3954;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -23,18 +33,22 @@ header {
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    font-family: 'Georgia', serif;
+    color: #fdfdfd;
 }
 
 header nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 header nav a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid #fdfdfd;
 }
 
 /* Layout */
@@ -45,67 +59,82 @@ header nav a:hover {
 
 /* Sidebar */
 .sidebar {
-    background-color: #333;
-    color: white;
+    background-color: #f1f5f9;
+    color: #333;
     width: 250px;
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px;
     position: fixed;
     left: 0;
-    top: 70px; /* Aligns with the header */
+    top: 70px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .sidebar .profile-pic {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
+    border: 3px solid #0073e6;
 }
 
 .sidebar h2 {
-    text-align: center;
-    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #0b3954;
+    margin-bottom: 10px;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    margin-top: 20px;
 }
 
 .sidebar ul li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .sidebar ul li a {
-    color: white;
-    text-decoration: none;
+    color: #0073e6;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-    text-decoration: underline;
+    color: #0b3954;
 }
 
+
+/* Main Content */
 /* Main Content */
 main {
     margin-left: 270px; /* Offset for the sidebar */
-    padding: 20px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-top: 20px;
 }
 
 main h1, main h2 {
+    color: #0b3954;
     margin-top: 0;
 }
 
-.intro, .projects, .papers {
+.intro p, .projects ul, .papers ul {
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #0b3954;
+    color: #fdfdfd;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+    font-size: 0.9rem;
 }
+
