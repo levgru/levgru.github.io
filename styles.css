@@ -15,7 +15,7 @@ header {
     box-sizing: border-box;
     width: 100%;
     height: auto; /* Let the content define the height */
-    border-bottom: 5px solid #0073e6; /* Blue line below header */
+    border-bottom: 5px solid #003366; /* Blue line below header */
 }
 
 
@@ -54,7 +54,7 @@ header nav a:hover {
     left: 220px; /* Align with the sidebar width */
     width: 5px;
     height: 100%;
-    background-color: #0073e6; /* Blue line color */
+    background-color: #003366; /* Blue line color */
 }
 
 /* Sidebar */
@@ -76,9 +76,7 @@ header nav a:hover {
     height: 120px;
     display: block;
     margin: 0 auto 15px;
-    border: 5px solid #0073e6; /* Blue frame */
 }
-
 .sidebar h2 {
     text-align: center;
     font-size: 1.5rem;
@@ -112,7 +110,7 @@ header nav a:hover {
 }
 
 .sidebar ul li a:hover {
-    color: #0073e6;
+    color: #003366;
 }
 
 .sidebar ul li .icon {
