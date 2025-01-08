@@ -10,7 +10,7 @@
 <body>
     <!-- Top Header -->
     <header>
-        <div class="logo">My Logo</div>
+        <div class="logo">Lev Gruber</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -29,7 +29,7 @@
             <ul>
                 <li>
                     <img src="images/location_logo.png" alt="Location" class="icon">
-                    <span>Claremont, CA</span>
+                    Claremont, CA
                 </li>
                 <li>
                     <a href="https://github.com/levgru" target="_blank">
@@ -54,15 +54,25 @@
 
         <!-- Main Content -->
         <main>
-            <section class="intro">
+            <!-- <section class="intro">
                 <h1>Hi!</h1>
                 <p>I’m Lev, a 3rd-year physics and mathematics undergraduate working on entanglement witnessing. <br> See below for a list of current and completed projects, and feel free to reach out via email or using the Contact page.</p>
-            </section>
+            </section> -->
 
             <section class="projects">
                 <h2>Projects</h2>
                 <ul>
-                    <li><a href="#">Project 1 Coming Soon</a></li>
+                    <li>
+                        <div class="collapsible" onclick="toggleProject(this)">
+                            <span class="project-title">Project 1</span>
+                            <span class="toggle-icon">+</span>
+                          </div>
+                          <!-- Hidden content container -->
+                          <div class="project-content">
+                            <p>This is more info about Project 1, plus images.</p>
+                            <img src="images/plot_1.png" alt="Plot 1" />
+                          </div>
+                    </li>
                 </ul>
             </section>
 
@@ -80,6 +90,21 @@
         <p>&copy; 2025 Lev Gruber</p>
     </footer>
 </body>
+
+<script>
+    function toggleProject(element) {
+      const content = element.nextElementSibling;
+      const icon = element.querySelector('.toggle-icon');
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+</script>
 </html>
+
 
 

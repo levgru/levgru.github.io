@@ -23,7 +23,7 @@ header .logo {
 }
 
 header nav a {
-    color: white;
+    color: #333;
     margin-left: 20px;
     text-decoration: none;
     font-size: 1rem;
@@ -139,6 +139,26 @@ footer {
         margin-left: 10px;
         font-size: 0.8rem; /* Smaller font */
     }
+}
+
+.collapsible {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .project-title {
+    margin-right: 8px;
+  }
+  
+  .toggle-icon {
+    transition: transform 0.2s ease;
+  }
+  
+  .project-content {
+    display: none; /* hidden by default */
+    margin-left: 20px; /* indent under the title row */
 }
 
 
