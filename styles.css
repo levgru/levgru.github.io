@@ -1,235 +1,286 @@
 /* General Styles */
-body, html {
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Header */
-header {
+  }
+  
+  /* Header */
+  header {
+    width: 100%;
+    border-bottom: 5px solid #003366; /* Blue line below header */
+  }
+  
+  .header-content {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0.5rem 1rem; /* Reduce padding for smaller header */
-    box-sizing: border-box;
-    width: 100%;
-    height: auto; /* Let the content define the height */
-    border-bottom: 5px solid #003366; /* Blue line below header */
-}
-
-
-header .logo {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #470000;
-}
-
-header nav {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Navigation (Desktop default) */
+  #navbar {
     display: flex;
     gap: 20px; /* Space between links */
-}
-
-header nav a {
+  }
+  
+  #navbar a {
     color: #333;
     text-decoration: none;
-    font-size: 1.0rem;
-}
-
-header nav a:hover {
+    font-size: 1rem;
+  }
+  
+  #navbar a:hover {
     text-decoration: underline;
-}
-
-/* Layout */
-.layout {
-    display: flex;
-    height: 100%;
-    align-items: flex-start;
-    position: relative;
-}
-
-
-/* Sidebar */
-.sidebar {
+  }
+  
+  /* Hamburger Icon (hidden on desktop by default) */
+  .hamburger {
+    display: none; /* Shown only on mobile */
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .hamburger.open {
+    /* Rotate the hamburger 90 degrees when open */
+    transform: rotate(90deg);
+  }
+  
+  /* Hamburger bars */
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+  }
+  
+  /* Sidebar (Desktop) */
+  .sidebar {
     background-color: #f8f9fa;
     width: 220px;
     padding: 20px;
-    box-sizing: border-box;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    height: 100%;
-    position: fixed; /* Fix to the side */
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
-}
-
-.sidebar .profile-pic {
+  }
+  
+  .sidebar .profile-pic {
     border-radius: 50%;
     width: 120px;
     height: 120px;
     display: block;
     margin: 0 auto 15px;
-}
-.sidebar h2 {
+  }
+  
+  .sidebar h2 {
     text-align: center;
     font-size: 1.5rem;
     margin: 10px 0;
-}
-
-.sidebar p {
+  }
+  
+  .sidebar p {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
-}
-
-.sidebar ul {
+  }
+  
+  .sidebar ul {
     list-style: none;
     padding: 0;
-}
-.sidebar ul li {
+  }
+  
+  .sidebar ul li {
     display: flex;
     align-items: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.0rem;
-    color: #333; /* Dark gray/black */
+    font-size: 1rem;
     margin-bottom: 10px;
-}
-
-.sidebar ul li a {
+  }
+  
+  .sidebar ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 1.0rem;
     margin-left: 10px;
-}
-
-.sidebar ul li a:hover {
+  }
+  
+  .sidebar ul li a:hover {
     color: #003366;
-}
-
-.sidebar ul li .icon {
+  }
+  
+  .sidebar ul li .icon {
     width: 20px;
     height: 20px;
     margin-right: 8px;
-}
-
-/* Main Content */
-main {
+  }
+  
+  /* Layout */
+  .layout {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    /* Let the height be auto; main content can expand */
+  }
+  
+  /* Main Content */
+  main {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 240px; /* Increased spacing */
-}
-
-main h1, main h2 {
+    margin-left: 240px; /* Leaves room for the sidebar on desktop */
+  }
+  
+  main h1, main h2 {
     color: #003366;
-}
-
-/* Footer */
-footer {
+  }
+  
+  /* Footer */
+  footer {
     text-align: center;
     padding: 5px 0;
     background-color: #003366;
     color: white;
     margin-top: 10px;
-}
-
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 180px; /* Smaller width for small screens */
-        padding: 15px;
-    }
-
-    main {
-        margin-left: 200px;
-        padding: 15px;
-    }
-
-    header {
-        height: 50px; /* Reduce height further */
-        padding: 10px 15px;
-    }
-
-    header nav a {
-        margin-left: 10px;
-        font-size: 1.5rem; /* Smaller font */
-    }
-}
-
-.collapsible {
+  }
+  
+  /* Collapsibles */
+  .collapsible {
     cursor: pointer;
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    color: #470000
+    color: #470000;
   }
   
-.project-title {
+  .project-title {
     margin-right: 8px;
     color: #470000;
   }
   
-.toggle-icon {
+  .toggle-icon {
     transition: transform 0.2s ease;
-    font-size: 1.5rem; /* increase size */
+    font-size: 1.5rem;
     font-weight: bold;
   }
   
-.project-content {
+  .project-content {
     display: none; /* hidden by default */
     margin-left: 20px; /* indent under the title row */
-}
-
-.logo, .papers .projects h2 {
-    font-family: 'Inter', sans-serif;
-    color: #470000; /* Dark gray/black */
-    font-size: 1.5rem; /* Adjust size as needed */
-    font-weight: bold; /* Ensure bold text */
   }
-
-/* Button Container */
-.button-container {
+  
+  /* Buttons + Image Container */
+  .button-container {
     display: flex;
-    gap: 10px; /* Space between buttons */
-    margin-top: 10px; /* Space above the container */
-}
-
-/* Button Styling */
-.button {
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #003366; /* Blue background */
-    color: white; /* White text */
-    text-decoration: none; /* Remove underline */
-    border-radius: 25px; /* Rounded corners */
+    background-color: #003366;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
     font-size: 1rem;
     font-weight: 500;
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transition */
-}
-
-/* Hover Effect */
-.button:hover {
-    transform: translateY(-3px); /* Slight bounce up */
-    background-color: #005bb5; /* Darker blue on hover */
-}
-
-/* Image Container with Blue Outline */
-.image-container {
-    border: 5px solid #003366; /* Blue outline */
-    padding: 10px; /* Space between image and border */
-    margin-top: 10px; /* Space above the container */
-    text-align: center; /* Center the content */
-    width: 50%; /* Set the container width to 50% of its parent */
-    margin-left: auto; /* Center the container horizontally */
-    margin-right: auto; /* Center the container horizontally */
-}
-
-.image-container img {
-    max-width: 100%; /* Ensure the image fits within the container */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .button:hover {
+    transform: translateY(-3px);
+    background-color: #005bb5;
+  }
+  
+  /* Image Container with Blue Outline */
+  .image-container {
+    border: 5px solid #003366;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .image-container img {
+    max-width: 100%;
     height: auto;
-}
-
-.image-container figcaption {
-    margin-top: 5px; /* Space above the caption */
+  }
+  
+  .image-container figcaption {
+    margin-top: 5px;
     font-style: italic;
-    color: #333; /* Dark gray/black */
-}
+    color: #333;
+  }
+  
+  /* Mobile Sidebar Content (hidden by default on desktop) */
+  .mobile-sidebar-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Same styling for the mobile profile pic area */
+  .mobile-sidebar-content .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Breakpoints */
+  @media (max-width: 992px) {
+    /* Show hamburger on medium+small devices */
+    .hamburger {
+      display: block;
+    }
+  
+    /* Make header items stack if needed */
+    .header-content {
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Hide the sidebar on mobile */
+    .sidebar {
+      display: none;
+    }
+  
+    /* Move main content to full width */
+    main {
+      margin-left: 0;
+    }
+  
+    /* Hide the nav by default; show only on .active */
+    #navbar {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 10px;
+    }
+  
+    #navbar.active {
+      display: flex;
+      /* Optionally style it like a dropdown */
+      background-color: #f8f9fa;
+      padding: 10px;
+    }
+  
+    #navbar a {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+  
+    /* Show the mobile sidebar content instead */
+    .mobile-sidebar-content {
+      display: block;
+    }
+  }
+  
 

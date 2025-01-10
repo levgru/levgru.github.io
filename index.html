@@ -1,147 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Top Header -->
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <!-- Hamburger + Nav Container -->
+    <div class="header-content">
+      <!-- Hamburger -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <!-- Three bars -->
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
 
-    <!-- Main Layout -->
-    <div class="layout">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <img src="images/headshot.jpg" alt="Profile Picture" class="profile-pic">
-            <h2>Lev Gruber</h2>
-            <p>3rd year undergraduate at Harvey Mudd College<br>Researcher in HMC Quantum Optics Group</p>
-            <ul>
-                <li>
-                    <a href="https://github.com/levgru" target="_blank">
-                        <img src="images/github_logo.png" alt="GitHub" class="icon">
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/levgruber" target="_blank">
-                        <img src="images/linkedin_logo.png" alt="LinkedIn" class="icon">
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:lgruber@hmc.edu">
-                        <img src="images/email_logo.png" alt="Email" class="icon">
-                        Email
-                    </a>
-                </li>
-            </ul>
-        </aside>
-
-        <!-- Main Content -->
-        <main>
-            <section class="intro">
-                <h1>Hi!</h1>
-                <p>I’m Lev, a 3rd-year physics and mathematics undergraduate student at Harvey Mudd College in Claremont, CA. Outside of coursework, I conduct research in entanglement witnessing with the HMC Quantum Optics Group, organize the HMC incoming class' orientation as an Orientation Director for the HMC Residential Life Office, and study up on fascinating topics. I am particularly interested in quantum information theory and quantum gravity, and am super excited to keep learning. I'm also a starter for the Claremont Colleges Men's Volleyball team, a Mentor for Atwood Dorm, and an avid lover of vintage sweaters! Feel free to contact me via email or using the Contact page.</p>
-            </section>
-
-            <section class="projects">
-                <h2>Research</h2>
-                <ul>
-                    <li>
-                        <div class="collapsible" onclick="toggleProject(this)">
-                            <span class="project-title">Quantum Optics Group, <b>Harvey Mudd College Spring 2024 - Present</b></span>
-                            <span class="toggle-icon">+</span>
-                          </div>
-                          <!-- Hidden content container -->
-                          <div class="project-content">
-                            <p>The HMC Quantum Optics group (or Lynn Lab), led by Professor Theresa Lynn, investigates quantum communication protocols for polarization-entangled two photon systems. Our current work focuses on developing a two-step adaptive choice method for determining the entanglement of two photons via a linear optical apparatus. <br> Check back Spring 2025 for an update on my theory work for the group, and see Professor Lynn's page for a more general overview of the group's work: https://www.hmc.edu/physics/faculty-staff/lynn/.
-                            </p>
-                            <!-- <img src="images/plot_1.png" alt="Plot 1" /> -->
-                          </div>
-                    </li>
-                    <li>
-                          <div class="collapsible" onclick="toggleProject(this)">
-                            <span class="project-title">Quantum Materials and Nanodevice Laboratory, <b>San Francisco State University Summer 2023</b></span>
-                            <span class="toggle-icon">+</span>
-                          </div>
-                          <!-- Hidden content container -->
-                          <div class="project-content">
-                            <p> The Quantum Materials Lab was led by the late Professor AKM Newaz at SFSU. As an undergraduate researcher, I studied shifts in the Raman peaks of Molybdenum Disulfide when developed on gold substrate in ambient vs. glove box environments. Using Raman spectrometry and Python for data analysis, we confirmed differences in biaxial strain and doping between the two preparation situations, showing potential impacts for solar and biomedical applications.
-                            </p>
-                            <!-- <img src="images/plot_1.png" alt="Plot 1" /> -->
-                          </div>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="projects">
-                <h2>Projects</h2>
-                <ul>
-                    <li>
-                        <div class="collapsible" onclick="toggleProject(this)">
-                            <span class="project-title">Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers, <b>Spring 2024</b></span>
-                            <span class="toggle-icon">+</span>
-                          </div>
-                          <!-- Hidden content container -->
-                          <div class="project-content">
-                            <p>
-                                <p>
-                                    Variational quantum eigensolvers (VQEs) are a type of algorithm that map a hamiltonian to a quantum circuit to calculate the ground state energy of a system. VQEs are strong due to them using classical and quantum computers for their respective strengths--the first for optimization and the second for measuring the qubits in our quantum circuit. <br> I calculated the ground state energies of ammonia NH<sub>3</sub> in various configurations, demonstrating a symmetric dual minima potential (SDMP) between two states using Qiskit VQE implementations and the IBM Cloud Platform. Figure 1 includes results from a both a noiseless and noisy quantum computer simulator. See the links below for a longer write up, results using IBM's quantum computer in Kyoto, an example calculation of H<sub>2</sub> ground state energy included, and all code involved.
-                                </p>
-                                <div class="button-container">
-                                    <a href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf" class="button" target="_blank">Read the Write Up</a>
-                                    <a href="https://github.com/levgru/lg_nh3_vqe_project/" class="button" target="_blank">View Code on GitHub</a>
-                                </div>
-                                <div class="image-container">
-                                    <img src="projects/nh3_sdmp/example_plot.png" alt="Ammonia SDMP" class="outlined-image">
-                                    <figcaption><i>Figure 1.</i> Ammonia ground state energy as a function of nitrogen distance from planar hydrogens.</figcaption>
-                                </div>
-                            </p>
-                            <!-- <img src="images/plot_1.png" alt="Plot 1" /> -->
-                          </div>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- <section class="papers">
-                <h2>Recent Papers</h2>
-                <ul>
-                    <li><a href="#">Paper 1 Being Written</a></li>
-                </ul>
-            </section> -->
-        </main>
+      <!-- Navigation -->
+      <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Lev Gruber</p>
-    </footer>
-</body>
+  <!-- Original Sidebar (Desktop only) -->
+  <aside class="sidebar">
+    <img src="images/headshot.jpg" alt="Profile Picture" class="profile-pic" />
+    <h2>Lev Gruber</h2>
+    <p>
+      3rd year undergraduate at Harvey Mudd College<br />
+      Researcher in HMC Quantum Optics Group
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/levgru" target="_blank">
+          <img src="images/github_logo.png" alt="GitHub" class="icon" />
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+          <img src="images/linkedin_logo.png" alt="LinkedIn" class="icon" />
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:lgruber@hmc.edu">
+          <img src="images/email_logo.png" alt="Email" class="icon" />
+          Email
+        </a>
+      </li>
+    </ul>
+  </aside>
 
-<script>
+  <!-- Mobile Sidebar Content (shown only on mobile) -->
+  <div class="mobile-sidebar-content">
+    <img src="images/headshot.jpg" alt="Profile Picture" class="profile-pic" />
+    <h2>Lev Gruber</h2>
+    <p>
+      3rd year undergraduate at Harvey Mudd College<br />
+      Researcher in HMC Quantum Optics Group
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/levgru" target="_blank">
+          <img src="images/github_logo.png" alt="GitHub" class="icon" />
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+          <img src="images/linkedin_logo.png" alt="LinkedIn" class="icon" />
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:lgruber@hmc.edu">
+          <img src="images/email_logo.png" alt="Email" class="icon" />
+          Email
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="layout">
+    <!-- Main Content -->
+    <main>
+      <!-- Intro Section -->
+      <section class="intro">
+        <h1>Hi!</h1>
+        <p>
+          I’m Lev, a 3rd-year physics and mathematics undergraduate student at Harvey
+          Mudd College in Claremont, CA. Outside of coursework, I conduct research in
+          entanglement witnessing with the HMC Quantum Optics Group, organize the HMC
+          incoming class' orientation as an Orientation Director for the HMC
+          Residential Life Office, and study up on fascinating topics. I am particularly
+          interested in quantum information theory and quantum gravity, and am super
+          excited to keep learning. I'm also a starter for the Claremont Colleges
+          Men's Volleyball team, a Mentor for Atwood Dorm, and an avid lover of vintage
+          sweaters! Feel free to contact me via email or using the Contact page.
+        </p>
+      </section>
+
+      <!-- Research Section -->
+      <section class="projects">
+        <h2>Research</h2>
+        <ul>
+          <li>
+            <div class="collapsible" onclick="toggleProject(this)">
+              <span class="project-title">
+                Quantum Optics Group, <b>Harvey Mudd College Spring 2024 - Present</b>
+              </span>
+              <span class="toggle-icon">+</span>
+            </div>
+            <!-- Hidden content container -->
+            <div class="project-content">
+              <p>
+                The HMC Quantum Optics group (or Lynn Lab), led by Professor Theresa Lynn,
+                investigates quantum communication protocols for polarization-entangled
+                two photon systems. Our current work focuses on developing a two-step
+                adaptive choice method for determining the entanglement of two photons via
+                a linear optical apparatus. <br />
+                Check back Spring 2025 for an update on my theory work for the group,
+                and see Professor Lynn's page for a more general overview of the group's
+                work:
+                <a
+                  href="https://www.hmc.edu/physics/faculty-staff/lynn/"
+                  target="_blank"
+                >https://www.hmc.edu/physics/faculty-staff/lynn/</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible" onclick="toggleProject(this)">
+              <span class="project-title">
+                Quantum Materials and Nanodevice Laboratory,
+                <b>San Francisco State University Summer 2023</b>
+              </span>
+              <span class="toggle-icon">+</span>
+            </div>
+            <!-- Hidden content container -->
+            <div class="project-content">
+              <p>
+                The Quantum Materials Lab was led by the late Professor AKM Newaz at SFSU.
+                As an undergraduate researcher, I studied shifts in the Raman peaks of
+                Molybdenum Disulfide when developed on gold substrate in ambient vs. glove
+                box environments. Using Raman spectrometry and Python for data analysis,
+                we confirmed differences in biaxial strain and doping between the two
+                preparation situations, showing potential impacts for solar and biomedical
+                applications.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <div class="collapsible" onclick="toggleProject(this)">
+              <span class="project-title">
+                Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers,
+                <b>Spring 2024</b>
+              </span>
+              <span class="toggle-icon">+</span>
+            </div>
+            <!-- Hidden content container -->
+            <div class="project-content">
+              <p>
+                Variational quantum eigensolvers (VQEs) are a type of algorithm that map a
+                hamiltonian to a quantum circuit to calculate the ground state energy of a
+                system. VQEs are strong due to them using classical and quantum computers
+                for their respective strengths--the first for optimization and the second
+                for measuring the qubits in our quantum circuit. <br />
+                I calculated the ground state energies of ammonia NH<sub>3</sub> in various
+                configurations, demonstrating a symmetric dual minima potential (SDMP)
+                between two states using Qiskit VQE implementations and the IBM Cloud
+                Platform. Figure 1 includes results from a both a noiseless and noisy
+                quantum computer simulator. See the links below for a longer write up,
+                results using IBM's quantum computer in Kyoto, an example calculation of
+                H<sub>2</sub> ground state energy included, and all code involved.
+              </p>
+              <div class="button-container">
+                <a
+                  href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  Read the Write Up
+                </a>
+                <a
+                  href="https://github.com/levgru/lg_nh3_vqe_project/"
+                  class="button"
+                  target="_blank"
+                >
+                  View Code on GitHub
+                </a>
+              </div>
+              <div class="image-container">
+                <img
+                  src="projects/nh3_sdmp/example_plot.png"
+                  alt="Ammonia SDMP"
+                  class="outlined-image"
+                />
+                <figcaption>
+                  <i>Figure 1.</i> Ammonia ground state energy as a function of
+                  nitrogen distance from planar hydrogens.
+                </figcaption>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Lev Gruber</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggles the collapsible research/projects sections
     function toggleProject(element) {
       const content = element.nextElementSibling;
-      const icon = element.querySelector('.toggle-icon');
-      if (content.style.display === 'block') {
-        content.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
+      const icon = element.querySelector(".toggle-icon");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        icon.style.transform = "rotate(0deg)";
       } else {
-        content.style.display = 'block';
-        icon.style.transform = 'rotate(180deg)';
+        content.style.display = "block";
+        icon.style.transform = "rotate(180deg)";
       }
     }
-</script>
+
+    // Toggles the hamburger menu
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const hamburger = document.querySelector(".hamburger");
+
+      // Toggle .active on the nav
+      navbar.classList.toggle("active");
+      // Rotate the hamburger icon
+      hamburger.classList.toggle("open");
+    }
+  </script>
+</body>
 </html>
+
 
 
 
