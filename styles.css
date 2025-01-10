@@ -128,6 +128,39 @@
     color: #003366;
   }
   
+  /* MOBILE-ONLY PROFILE SECTION (Hidden on desktop) */
+  .mobile-profile {
+    display: none; /* Show only on mobile */
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Container for the profile pic with the blue outline */
+  .mobile-picture-container {
+    border: 5px solid #003366; /* Blue outline */
+    width: 50%;               /* Take up half the mobile page width */
+    margin: 0 auto;           /* Center horizontally */
+    margin-top: 1rem;
+  }
+  .mobile-profile-pic {
+    width: 100%;  /* Fill the container */
+    height: auto;
+    display: block;
+    border-radius: 50%;
+  }
+  
+  /* Icons in a row, no text */
+  .mobile-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .mobile-icons img {
+    width: 28px;  /* Keep them small and clickable */
+    height: 28px;
+  }
+  
   /* FOOTER */
   footer {
     text-align: center;
@@ -208,17 +241,13 @@
     .hamburger {
       display: block; /* Show hamburger on tablet + mobile */
     }
-    /* Optionally you could hide nav by default even on tablet, but that's up to you */
   }
   
   /* 2) Small screens: Hide the sidebar, reorder layout */
   @media (max-width: 768px) {
     /* Hide the fixed sidebar on mobile */
     .sidebar {
-      position: static;
-      width: 100%;
-      height: auto;
-      display: none; /* Hide the entire sidebar on small screens */
+      display: none;
     }
   
     /* Let main fill the width */
@@ -246,5 +275,11 @@
     .layout {
       flex-direction: column;
     }
+  
+    /* Show the mobile-only profile above 'Hi!' */
+    .mobile-profile {
+      display: block;
+    }
   }
+  
   
