@@ -222,7 +222,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* ensures the pic fills the circle */
-    /* we already have border-radius on container, so no need to do radius here */
+    border-radius: 50%; /* Ensure the image itself is a circle */
   }
   
   /* Icons below the picture, side by side, small */
