@@ -217,6 +217,9 @@ footer {
     padding: 10px; /* Space between image and border */
     margin-top: 10px; /* Space above the container */
     text-align: center; /* Center the content */
+    width: 50%; /* Set the container width to 50% of its parent */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
 }
 
 .image-container img {
