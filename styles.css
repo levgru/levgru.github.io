@@ -1,15 +1,15 @@
-/* General Styles */
+/* Reset / Global */
 * {
     box-sizing: border-box;
   }
   
   body, html {
-    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
   }
   
-  /* Header */
+  /* HEADER */
   header {
     width: 100%;
     border-bottom: 5px solid #003366; /* Blue line below header */
@@ -22,7 +22,7 @@
     padding: 0.5rem 1rem;
   }
   
-  /* Navigation (Desktop default) */
+  /* NAVIGATION - Desktop Defaults */
   #navbar {
     display: flex;
     gap: 20px; /* Space between links */
@@ -38,19 +38,17 @@
     text-decoration: underline;
   }
   
-  /* Hamburger Icon (hidden on desktop by default) */
+  /* HAMBURGER ICON (hidden on desktop) */
   .hamburger {
-    display: none; /* Shown only on mobile */
+    display: none;
     cursor: pointer;
     margin-right: 1rem;
     transition: transform 0.3s ease;
   }
-  
   .hamburger.open {
     /* Rotate the hamburger 90 degrees when open */
     transform: rotate(90deg);
   }
-  
   /* Hamburger bars */
   .hamburger .bar {
     width: 25px;
@@ -59,18 +57,24 @@
     margin: 5px 0;
   }
   
-  /* Sidebar (Desktop) */
+  /* LAYOUT */
+  .layout {
+    display: flex; /* Desktop: sidebar left, main on right */
+  }
+  
+  /* SIDEBAR (Desktop) */
   .sidebar {
     background-color: #f8f9fa;
     width: 220px;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     height: 100vh;
-    position: fixed;
+    position: fixed; /* fixed for desktop */
     top: 0;
     left: 0;
   }
   
+  /* Sidebar Content */
   .sidebar .profile-pic {
     border-radius: 50%;
     width: 120px;
@@ -78,67 +82,53 @@
     display: block;
     margin: 0 auto 15px;
   }
-  
   .sidebar h2 {
     text-align: center;
     font-size: 1.5rem;
     margin: 10px 0;
   }
-  
   .sidebar p {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
   }
-  
   .sidebar ul {
     list-style: none;
     padding: 0;
   }
-  
   .sidebar ul li {
     display: flex;
     align-items: center;
-    font-size: 1rem;
     margin-bottom: 10px;
   }
-  
   .sidebar ul li a {
     text-decoration: none;
     color: #333;
     margin-left: 10px;
+    font-size: 1rem;
   }
-  
   .sidebar ul li a:hover {
     color: #003366;
   }
-  
+  /* Control icon size so it doesn't blow up on mobile */
   .sidebar ul li .icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
   }
   
-  /* Layout */
-  .layout {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-    /* Let the height be auto; main content can expand */
-  }
-  
-  /* Main Content */
+  /* MAIN CONTENT */
   main {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 240px; /* Leaves room for the sidebar on desktop */
+    margin-left: 220px; /* Leaves space for the sidebar on desktop */
   }
-  
-  main h1, main h2 {
+  main h1,
+  main h2 {
     color: #003366;
   }
   
-  /* Footer */
+  /* FOOTER */
   footer {
     text-align: center;
     padding: 5px 0;
@@ -147,7 +137,7 @@
     margin-top: 10px;
   }
   
-  /* Collapsibles */
+  /* COLLAPSIBLES */
   .collapsible {
     cursor: pointer;
     display: flex;
@@ -155,48 +145,43 @@
     margin-bottom: 8px;
     color: #470000;
   }
-  
   .project-title {
     margin-right: 8px;
     color: #470000;
   }
-  
   .toggle-icon {
     transition: transform 0.2s ease;
     font-size: 1.5rem;
     font-weight: bold;
   }
-  
   .project-content {
     display: none; /* hidden by default */
     margin-left: 20px; /* indent under the title row */
   }
   
-  /* Buttons + Image Container */
+  /* BUTTONS + IMAGE CONTAINER */
   .button-container {
     display: flex;
     gap: 10px;
     margin-top: 10px;
   }
-  
   .button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #003366;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: 500;
     transition: transform 0.2s ease, background-color 0.2s ease;
   }
-  
   .button:hover {
     transform: translateY(-3px);
     background-color: #005bb5;
   }
   
-  /* Image Container with Blue Outline */
+  /* IMAGE CONTAINER WITH BLUE OUTLINE */
   .image-container {
     border: 5px solid #003366;
     padding: 10px;
@@ -206,81 +191,60 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
   .image-container img {
     max-width: 100%;
     height: auto;
   }
-  
   .image-container figcaption {
     margin-top: 5px;
     font-style: italic;
     color: #333;
   }
   
-  /* Mobile Sidebar Content (hidden by default on desktop) */
-  .mobile-sidebar-content {
-    display: none;
-    padding: 20px;
-    text-align: center;
-  }
+  /* RESPONSIVE BREAKPOINTS */
   
-  /* Same styling for the mobile profile pic area */
-  .mobile-sidebar-content .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  /* Responsive Breakpoints */
+  /* 1) Medium screens: Show hamburger, keep nav visible if you want */
   @media (max-width: 992px) {
-    /* Show hamburger on medium+small devices */
     .hamburger {
-      display: block;
+      display: block; /* Show hamburger on tablet + mobile */
     }
-  
-    /* Make header items stack if needed */
-    .header-content {
-      justify-content: space-between;
-    }
+    /* Optionally you could hide nav by default even on tablet, but that's up to you */
   }
   
+  /* 2) Small screens: Hide the sidebar, reorder layout */
   @media (max-width: 768px) {
-    /* Hide the sidebar on mobile */
+    /* Hide the fixed sidebar on mobile */
     .sidebar {
-      display: none;
+      position: static;
+      width: 100%;
+      height: auto;
+      display: none; /* Hide the entire sidebar on small screens */
     }
   
-    /* Move main content to full width */
+    /* Let main fill the width */
     main {
       margin-left: 0;
     }
   
-    /* Hide the nav by default; show only on .active */
+    /* The nav is hidden by default; toggled by .active */
     #navbar {
       display: none;
       flex-direction: column;
-      gap: 0;
-      margin-top: 10px;
-    }
-  
-    #navbar.active {
-      display: flex;
-      /* Optionally style it like a dropdown */
       background-color: #f8f9fa;
       padding: 10px;
+      margin-top: 10px;
     }
-  
+    #navbar.active {
+      display: flex;
+    }
     #navbar a {
       margin: 5px 0;
       font-size: 1.1rem;
     }
   
-    /* Show the mobile sidebar content instead */
-    .mobile-sidebar-content {
-      display: block;
+    /* The layout container now flows top-down, no fixed sidebars */
+    .layout {
+      flex-direction: column;
     }
   }
   
-

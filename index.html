@@ -15,13 +15,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
-    <!-- Hamburger + Nav Container -->
     <div class="header-content">
-      <!-- Hamburger -->
+      <!-- Hamburger icon (shown only on mobile) -->
       <div class="hamburger" onclick="toggleMenu()">
-        <!-- Three bars -->
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -37,87 +35,64 @@
     </div>
   </header>
 
-  <!-- Original Sidebar (Desktop only) -->
-  <aside class="sidebar">
-    <img src="images/headshot.jpg" alt="Profile Picture" class="profile-pic" />
-    <h2>Lev Gruber</h2>
-    <p>
-      3rd year undergraduate at Harvey Mudd College<br />
-      Researcher in HMC Quantum Optics Group
-    </p>
-    <ul>
-      <li>
-        <a href="https://github.com/levgru" target="_blank">
-          <img src="images/github_logo.png" alt="GitHub" class="icon" />
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/levgruber" target="_blank">
-          <img src="images/linkedin_logo.png" alt="LinkedIn" class="icon" />
-          LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="mailto:lgruber@hmc.edu">
-          <img src="images/email_logo.png" alt="Email" class="icon" />
-          Email
-        </a>
-      </li>
-    </ul>
-  </aside>
-
-  <!-- Mobile Sidebar Content (shown only on mobile) -->
-  <div class="mobile-sidebar-content">
-    <img src="images/headshot.jpg" alt="Profile Picture" class="profile-pic" />
-    <h2>Lev Gruber</h2>
-    <p>
-      3rd year undergraduate at Harvey Mudd College<br />
-      Researcher in HMC Quantum Optics Group
-    </p>
-    <ul>
-      <li>
-        <a href="https://github.com/levgru" target="_blank">
-          <img src="images/github_logo.png" alt="GitHub" class="icon" />
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/levgruber" target="_blank">
-          <img src="images/linkedin_logo.png" alt="LinkedIn" class="icon" />
-          LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="mailto:lgruber@hmc.edu">
-          <img src="images/email_logo.png" alt="Email" class="icon" />
-          Email
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Main Layout -->
+  <!-- MAIN LAYOUT -->
   <div class="layout">
-    <!-- Main Content -->
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <img
+        src="images/headshot.jpg"
+        alt="Profile Picture"
+        class="profile-pic"
+      />
+      <h2>Lev Gruber</h2>
+      <p>
+        3rd year undergraduate at Harvey Mudd College<br />
+        Researcher in HMC Quantum Optics Group
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/levgru" target="_blank">
+            <img src="images/github_logo.png" alt="GitHub" class="icon" />
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+            <img
+              src="images/linkedin_logo.png"
+              alt="LinkedIn"
+              class="icon"
+            />
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="mailto:lgruber@hmc.edu">
+            <img src="images/email_logo.png" alt="Email" class="icon" />
+            Email
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
     <main>
-      <!-- Intro Section -->
       <section class="intro">
         <h1>Hi!</h1>
         <p>
-          I’m Lev, a 3rd-year physics and mathematics undergraduate student at Harvey
-          Mudd College in Claremont, CA. Outside of coursework, I conduct research in
-          entanglement witnessing with the HMC Quantum Optics Group, organize the HMC
-          incoming class' orientation as an Orientation Director for the HMC
-          Residential Life Office, and study up on fascinating topics. I am particularly
-          interested in quantum information theory and quantum gravity, and am super
-          excited to keep learning. I'm also a starter for the Claremont Colleges
-          Men's Volleyball team, a Mentor for Atwood Dorm, and an avid lover of vintage
-          sweaters! Feel free to contact me via email or using the Contact page.
+          I’m Lev, a 3rd-year physics and mathematics undergraduate student
+          at Harvey Mudd College in Claremont, CA. Outside of coursework, I conduct
+          research in entanglement witnessing with the HMC Quantum Optics Group,
+          organize the HMC incoming class' orientation as an Orientation Director
+          for the HMC Residential Life Office, and study up on fascinating topics.
+          I am particularly interested in quantum information theory and quantum
+          gravity, and am super excited to keep learning. I'm also a starter for
+          the Claremont Colleges Men's Volleyball team, a Mentor for Atwood Dorm,
+          and an avid lover of vintage sweaters! Feel free to contact me via email
+          or using the Contact page.
         </p>
       </section>
 
-      <!-- Research Section -->
       <section class="projects">
         <h2>Research</h2>
         <ul>
@@ -131,18 +106,20 @@
             <!-- Hidden content container -->
             <div class="project-content">
               <p>
-                The HMC Quantum Optics group (or Lynn Lab), led by Professor Theresa Lynn,
-                investigates quantum communication protocols for polarization-entangled
-                two photon systems. Our current work focuses on developing a two-step
-                adaptive choice method for determining the entanglement of two photons via
-                a linear optical apparatus. <br />
-                Check back Spring 2025 for an update on my theory work for the group,
-                and see Professor Lynn's page for a more general overview of the group's
-                work:
+                The HMC Quantum Optics group (or Lynn Lab), led by Professor
+                Theresa Lynn, investigates quantum communication protocols for
+                polarization-entangled two photon systems. Our current work
+                focuses on developing a two-step adaptive choice method for
+                determining the entanglement of two photons via a linear optical
+                apparatus. <br />Check back Spring 2025 for an update on my theory
+                work for the group, and see Professor Lynn's page for a more
+                general overview of the group's work:
                 <a
                   href="https://www.hmc.edu/physics/faculty-staff/lynn/"
                   target="_blank"
-                >https://www.hmc.edu/physics/faculty-staff/lynn/</a>.
+                >
+                  https://www.hmc.edu/physics/faculty-staff/lynn/
+                </a>.
               </p>
             </div>
           </li>
@@ -157,20 +134,20 @@
             <!-- Hidden content container -->
             <div class="project-content">
               <p>
-                The Quantum Materials Lab was led by the late Professor AKM Newaz at SFSU.
-                As an undergraduate researcher, I studied shifts in the Raman peaks of
-                Molybdenum Disulfide when developed on gold substrate in ambient vs. glove
-                box environments. Using Raman spectrometry and Python for data analysis,
-                we confirmed differences in biaxial strain and doping between the two
-                preparation situations, showing potential impacts for solar and biomedical
-                applications.
+                The Quantum Materials Lab was led by the late Professor
+                AKM Newaz at SFSU. As an undergraduate researcher, I studied
+                shifts in the Raman peaks of Molybdenum Disulfide when developed
+                on gold substrate in ambient vs. glove box environments. Using
+                Raman spectrometry and Python for data analysis, we confirmed
+                differences in biaxial strain and doping between the two
+                preparation situations, showing potential impacts for solar
+                and biomedical applications.
               </p>
             </div>
           </li>
         </ul>
       </section>
 
-      <!-- Projects Section -->
       <section class="projects">
         <h2>Projects</h2>
         <ul>
@@ -185,18 +162,20 @@
             <!-- Hidden content container -->
             <div class="project-content">
               <p>
-                Variational quantum eigensolvers (VQEs) are a type of algorithm that map a
-                hamiltonian to a quantum circuit to calculate the ground state energy of a
-                system. VQEs are strong due to them using classical and quantum computers
-                for their respective strengths--the first for optimization and the second
-                for measuring the qubits in our quantum circuit. <br />
-                I calculated the ground state energies of ammonia NH<sub>3</sub> in various
-                configurations, demonstrating a symmetric dual minima potential (SDMP)
-                between two states using Qiskit VQE implementations and the IBM Cloud
-                Platform. Figure 1 includes results from a both a noiseless and noisy
-                quantum computer simulator. See the links below for a longer write up,
-                results using IBM's quantum computer in Kyoto, an example calculation of
-                H<sub>2</sub> ground state energy included, and all code involved.
+                Variational quantum eigensolvers (VQEs) are a type of algorithm
+                that map a hamiltonian to a quantum circuit to calculate the ground
+                state energy of a system. VQEs are strong due to them using
+                classical and quantum computers for their respective
+                strengths--the first for optimization and the second for measuring
+                the qubits in our quantum circuit. <br />I calculated the ground
+                state energies of ammonia NH<sub>3</sub> in various configurations,
+                demonstrating a symmetric dual minima potential (SDMP) between two
+                states using Qiskit VQE implementations and the IBM Cloud Platform.
+                Figure 1 includes results from both a noiseless and noisy quantum
+                computer simulator. See the links below for a longer write up,
+                results using IBM's quantum computer in Kyoto, an example
+                calculation of H<sub>2</sub> ground state energy included,
+                and all code involved.
               </p>
               <div class="button-container">
                 <a
@@ -232,7 +211,7 @@
     </main>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Lev Gruber</p>
   </footer>
@@ -256,7 +235,6 @@
     function toggleMenu() {
       const navbar = document.getElementById("navbar");
       const hamburger = document.querySelector(".hamburger");
-
       // Toggle .active on the nav
       navbar.classList.toggle("active");
       // Rotate the hamburger icon
@@ -265,7 +243,3 @@
   </script>
 </body>
 </html>
-
-
-
-
