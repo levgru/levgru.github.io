@@ -49,7 +49,6 @@
     /* Rotate the hamburger 90 degrees when open */
     transform: rotate(90deg);
   }
-  /* Hamburger bars */
   .hamburger .bar {
     width: 25px;
     height: 3px;
@@ -110,7 +109,6 @@
   .sidebar ul li a:hover {
     color: #003366;
   }
-  /* Control icon size so it doesn't blow up on mobile */
   .sidebar ul li .icon {
     width: 24px;
     height: 24px;
@@ -126,39 +124,6 @@
   main h1,
   main h2 {
     color: #003366;
-  }
-  
-  /* MOBILE-ONLY PROFILE SECTION (Hidden on desktop) */
-  .mobile-profile {
-    display: none; /* Show only on mobile */
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  /* Container for the profile pic with the blue outline */
-  .mobile-picture-container {
-    border: 5px solid #003366; /* Blue outline */
-    width: 50%;               /* Take up half the mobile page width */
-    margin: 0 auto;           /* Center horizontally */
-    margin-top: 1rem;
-  }
-  .mobile-profile-pic {
-    width: 100%;  /* Fill the container */
-    height: auto;
-    display: block;
-    border-radius: 50%;
-  }
-  
-  /* Icons in a row, no text */
-  .mobile-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .mobile-icons img {
-    width: 28px;  /* Keep them small and clickable */
-    height: 28px;
   }
   
   /* FOOTER */
@@ -214,7 +179,6 @@
     background-color: #005bb5;
   }
   
-  /* IMAGE CONTAINER WITH BLUE OUTLINE */
   .image-container {
     border: 5px solid #003366;
     padding: 10px;
@@ -234,16 +198,55 @@
     color: #333;
   }
   
+  /* MOBILE-ONLY PROFILE (Hidden on Desktop) */
+  .mobile-profile {
+    display: none; /* Will show only on small screens */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Circular container at half screen width */
+  .mobile-picture-container {
+    /* Using viewport width so it's half the screen */
+    width: 50vw;
+    height: 50vw;
+    margin: 1rem auto 0 auto;
+    border: 5px solid #003366; 
+    border-radius: 50%;       /* circle */
+    overflow: hidden;         /* so the image doesn't overflow the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures the pic fills the circle */
+    /* we already have border-radius on container, so no need to do radius here */
+  }
+  
+  /* Icons below the picture, side by side, small */
+  .mobile-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .mobile-icons img {
+    width: 28px;
+    height: 28px;
+  }
+  
   /* RESPONSIVE BREAKPOINTS */
   
-  /* 1) Medium screens: Show hamburger, keep nav visible if you want */
+  /* Show hamburger on tablet + mobile */
   @media (max-width: 992px) {
     .hamburger {
-      display: block; /* Show hamburger on tablet + mobile */
+      display: block;
     }
   }
   
-  /* 2) Small screens: Hide the sidebar, reorder layout */
+  /* On mobile: hide sidebar, show mobile-profile */
   @media (max-width: 768px) {
     /* Hide the fixed sidebar on mobile */
     .sidebar {
@@ -278,8 +281,7 @@
   
     /* Show the mobile-only profile above 'Hi!' */
     .mobile-profile {
-      display: block;
+      display: block !important;
     }
   }
-  
   
