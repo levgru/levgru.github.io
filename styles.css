@@ -3,10 +3,11 @@
     box-sizing: border-box;
   }
   
-  body, html {
+  html, body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    background-color: #FFF8F0; /* Warm off-white for the entire page */
   }
   
   /* Remove default margins from headings, etc. */
@@ -18,7 +19,8 @@
   /* HEADER */
   header {
     width: 100%;
-    border-bottom: 5px solid #003366; /* Blue line below header */
+    /* Peach-orange line below header */
+    border-bottom: 5px solid #F28C38; 
   }
   
   .header-content {
@@ -35,7 +37,7 @@
   }
   
   #navbar a {
-    color: #333;
+    color: #4D3E3E; /* Warm dark brown text */
     text-decoration: none;
     font-size: 1rem;
   }
@@ -52,30 +54,28 @@
     position: relative;
   }
   .bar {
-    width: 25px;       /* match the triangle base width */
+    width: 25px;   /* match the triangle base width */
     height: 3px;
-    background-color: #333;
+    background-color: #4D3E3E; /* same warm brown as text */
     margin: 5px 0;
     transition: all 0.3s ease;
   }
   
   /* Turn hamburger into a downward triangle by hiding two bars */
   .hamburger.open .bar1 {
-    /* This bar becomes a downward-pointing triangle */
     width: 0;
     height: 0;
-    border-left: 12.5px solid transparent; 
-    border-right: 12.5px solid transparent; 
-    border-top: 10px solid #333; /* color matches original bar color */
-    margin: 0 auto; /* center horizontally */
-    background-color: transparent; /* ensure no leftover bg color */
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-top: 10px solid #4D3E3E; /* matches the bar color */
+    margin: 0 auto; 
+    background-color: transparent; 
   }
   .hamburger.open .bar2,
   .hamburger.open .bar3 {
-    opacity: 0;    /* fully hide them */
+    opacity: 0;   /* hide them completely */
     pointer-events: none;
-    transform: none;
-    width: 0;      /* prevent leftover bar width from showing */
+    width: 0;
   }
   
   /* LAYOUT */
@@ -85,27 +85,28 @@
   
   /* SIDEBAR (Desktop) */
   .sidebar {
-    background-color: #f8f9fa;
+    background-color: #FFF8F0; /* match page background */
     width: 220px;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     height: 100vh;
-    position: fixed; /* fix it to the left on desktop */
+    position: fixed; 
     top: 0;
     left: 0;
   }
   
   .desktop-picture-container {
-    width: 130px;            /* container diameter */
+    width: 130px;
     height: 130px;
-    margin: 0 auto 15px;     /* center horizontally, 15px gap under */
-    border: 5px solid #003366;
+    margin: 0 auto 15px; 
+    border: 5px solid #F2B880; /* Soft peach border outline */
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  
   .desktop-profile-pic {
     width: 100%;
     height: 100%;
@@ -115,11 +116,12 @@
   .sidebar h2 {
     text-align: center;
     font-size: 1.5rem;
+    color: #4D3E3E; /* warm brown for headings */
     margin: 10px 0;
   }
   .sidebar p {
     text-align: center;
-    color: #333;
+    color: #4D3E3E;
     margin-bottom: 20px;
   }
   .sidebar ul {
@@ -133,12 +135,12 @@
   }
   .sidebar ul li a {
     text-decoration: none;
-    color: #333;
+    color: #4D3E3E;
     margin-left: 10px;
     font-size: 1rem;
   }
   .sidebar ul li a:hover {
-    color: #003366;
+    color: #F28C38; /* highlight on hover */
   }
   .sidebar ul li .icon {
     width: 24px;
@@ -150,24 +152,28 @@
   main {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 220px; /* Leaves space for the sidebar on desktop */
+    margin-left: 220px; /* space for the sidebar */
   }
   
-  /* Tweak spacing so there's no large gap on desktop above "Hi!" */
+  /* Adjust spacing so there's no large gap on desktop above "Hi!" */
   .intro {
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 1rem;
   }
   .intro h1 {
+    color: #4D3E3E;
     margin-bottom: 0.5rem;
+  }
+  .intro p {
+    color: #4D3E3E;
   }
   
   /* FOOTER */
   footer {
     text-align: center;
     padding: 5px 0;
-    background-color: #003366;
-    color: white;
+    background-color: #4D3E3E; /* warm brown footer */
+    color: #FFF8F0;           /* off-white text */
     margin-top: 10px;
   }
   
@@ -177,11 +183,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    color: #470000;
+    color: #4D3E3E;
   }
   .project-title {
     margin-right: 8px;
-    color: #470000;
+    color: #4D3E3E;
   }
   .toggle-icon {
     transition: transform 0.2s ease;
@@ -189,8 +195,8 @@
     font-weight: bold;
   }
   .project-content {
-    display: none; /* hidden by default */
-    margin-left: 20px; /* indent under the title row */
+    display: none; 
+    margin-left: 20px; 
   }
   
   /* BUTTONS + IMAGE CONTAINER */
@@ -202,8 +208,8 @@
   .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #003366;
-    color: #fff;
+    background-color: #F2B880; /* soft peach */
+    color: #4D3E3E;
     text-decoration: none;
     border-radius: 25px;
     font-size: 1rem;
@@ -212,11 +218,11 @@
   }
   .button:hover {
     transform: translateY(-3px);
-    background-color: #005bb5;
+    background-color: #F28C38; /* darker peach on hover */
   }
   
   .image-container {
-    border: 5px solid #003366;
+    border: 5px solid #F2B880;
     padding: 10px;
     margin-top: 10px;
     text-align: center;
@@ -231,19 +237,19 @@
   .image-container figcaption {
     margin-top: 5px;
     font-style: italic;
-    color: #333;
+    color: #4D3E3E;
   }
   
   /* MOBILE-ONLY PROFILE */
   .mobile-profile {
-    display: none; /* Shown only on small screens */
+    display: none; 
     text-align: center;
     margin-bottom: 1rem;
   }
   .mobile-picture-container {
     width: 50vw;
     height: 50vw;
-    border: 5px solid #003366;
+    border: 5px solid #F2B880; 
     border-radius: 50%;
     overflow: hidden;
     margin: 1rem auto 0 auto;
@@ -269,12 +275,12 @@
   
   /* POPUP MENU (MOBILE ONLY) */
   #popoutMenu {
-    display: none; /* hidden by default */
+    display: none;
     position: absolute;
-    top: 60px;         /* below the header/hamburger */
+    top: 60px;       
     right: 1rem;
-    width: 160px;      /* width of the overlay */
-    background-color: rgba(128,128,128, 0.7); /* semi-transparent gray */
+    width: 160px;    
+    background-color: rgba(77, 62, 62, 0.85); /* semi-transparent brown */
     padding: 1rem;
     border-radius: 6px;
     text-align: center;
@@ -282,7 +288,7 @@
     transform-origin: top right;
     transform: scale(0);
     transition: transform 0.3s ease;
-    z-index: 999; /* ensure it appears on top */
+    z-index: 999; 
   }
   #popoutMenu ul {
     list-style: none;
@@ -294,8 +300,11 @@
   }
   #popoutMenu ul li a {
     text-decoration: none;
-    color: #333;
+    color: #FFF8F0;
     font-size: 1.1rem;
+  }
+  #popoutMenu ul li a:hover {
+    color: #F2B880; 
   }
   #popoutMenu.show {
     display: block;
