@@ -9,6 +9,12 @@
     font-family: 'Inter', sans-serif;
   }
   
+  /* Remove default margins from headings, etc. */
+  h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
   /* HEADER */
   header {
     width: 100%;
@@ -55,19 +61,18 @@
   
   /* Turn hamburger into a downward triangle by hiding two bars */
   .hamburger.open .bar1 {
-    /* Triangle shape (downward) using borders */
+    /* Triangle shape (downward) using CSS borders */
     width: 0;
     height: 0;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
     border-top: 10px solid #333;
-    margin: 0 auto;  /* center horizontally */
-    transform: none; /* override default transition transform */
+    margin: 0 auto; /* center horizontally */
   }
-  .hamburger.open .bar2, .hamburger.open .bar3 {
-    opacity: 0;      /* hide them */
+  .hamburger.open .bar2,
+  .hamburger.open .bar3 {
+    opacity: 0;    /* hide them */
     pointer-events: none;
-    transform: none;
   }
   
   /* LAYOUT */
@@ -87,7 +92,6 @@
     left: 0;
   }
   
-  /* Desktop: Blue-outlined circle for the profile pic */
   .desktop-picture-container {
     width: 130px;            /* container diameter */
     height: 130px;
@@ -99,7 +103,6 @@
     align-items: center;
     justify-content: center;
   }
-  
   .desktop-profile-pic {
     width: 100%;
     height: 100%;
@@ -146,9 +149,14 @@
     padding: 20px;
     margin-left: 220px; /* Leaves space for the sidebar on desktop */
   }
-  main h1,
-  main h2 {
-    color: #003366;
+  
+  /* Tweak spacing so there's no large gap on desktop above "Hi!" */
+  .intro {
+    margin-top: 0; 
+    margin-bottom: 1rem;
+  }
+  .intro h1 {
+    margin-bottom: 0.5rem;
   }
   
   /* FOOTER */
@@ -160,7 +168,7 @@
     margin-top: 10px;
   }
   
-  /* COLLAPSIBLES */
+  /* COLLAPSIBLES (Research/Projects) */
   .collapsible {
     cursor: pointer;
     display: flex;
@@ -204,7 +212,6 @@
     background-color: #005bb5;
   }
   
-  /* For images within your content (like the ammonia plot) */
   .image-container {
     border: 5px solid #003366;
     padding: 10px;
@@ -224,14 +231,12 @@
     color: #333;
   }
   
-  /* MOBILE-ONLY PROFILE (Hidden on Desktop) */
+  /* MOBILE-ONLY PROFILE */
   .mobile-profile {
     display: none; /* Shown only on small screens */
     text-align: center;
     margin-bottom: 1rem;
   }
-  
-  /* Circular Blue Outline Container for mobile photo */
   .mobile-picture-container {
     width: 50vw;
     height: 50vw;
@@ -246,10 +251,8 @@
   .mobile-profile-pic {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* fill the circular container */
+    object-fit: cover;
   }
-  
-  /* Icons in a row, no text */
   .mobile-icons {
     display: flex;
     justify-content: center;
@@ -265,37 +268,32 @@
   #popoutMenu {
     display: none; /* hidden by default */
     position: absolute;
-    top: 60px;     /* just below the header/hamburger */
+    top: 60px;         /* below the header/hamburger */
     right: 1rem;
-    width: 160px;  /* how wide you want the overlay */
-    background-color: #b7e9c2; /* your chosen color */
+    width: 160px;      /* width of the overlay */
+    background-color: #b7e9c2; 
     padding: 1rem;
     border-radius: 6px;
     text-align: center;
   
-    /* For the scale-down-from-top effect */
     transform-origin: top right;
     transform: scale(0);
     transition: transform 0.3s ease;
     z-index: 999; /* ensure it appears on top */
   }
-  
   #popoutMenu ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  
   #popoutMenu ul li {
-    margin: 0.5rem 0; /* spacing between links */
+    margin: 0.5rem 0;
   }
-  
   #popoutMenu ul li a {
     text-decoration: none;
-    color: #333; /* text color for links */
+    color: #333;
     font-size: 1.1rem;
   }
-  
   #popoutMenu.show {
     display: block;
     transform: scale(1);
@@ -322,12 +320,11 @@
       margin-left: 0;
     }
   
-    /* The standard #navbar is hidden on mobile; we use popout instead */
+    /* Hide #navbar on mobile in favor of popoutMenu */
     #navbar {
       display: none !important;
     }
   
-    /* The layout container now flows top-down */
     .layout {
       flex-direction: column;
     }
