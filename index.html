@@ -18,26 +18,34 @@
   <!-- HEADER -->
   <header>
     <div class="header-content">
-      <!-- Hamburger icon (shown only on mobile) -->
+      <!-- Hamburger (mobile only) -->
       <div class="hamburger" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
       </div>
 
-      <!-- Navigation -->
+      <!-- Desktop Nav (hidden on mobile) -->
       <nav id="navbar">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- POPUP MENU (MOBILE ONLY) -->
+  <div id="popoutMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
   <!-- MAIN LAYOUT -->
   <div class="layout">
-    <!-- SIDEBAR (Desktop Only) -->
+    <!-- SIDEBAR (Desktop) -->
     <aside class="sidebar">
       <!-- Desktop: Blue circular container -->
       <div class="desktop-picture-container">
@@ -263,15 +271,18 @@
       }
     }
 
-    // Toggles the hamburger menu
+    // Toggles the hamburger menu + the popout
     function toggleMenu() {
-      const navbar = document.getElementById("navbar");
       const hamburger = document.querySelector(".hamburger");
-      // Toggle .active on the nav
-      navbar.classList.toggle("active");
-      // Rotate the hamburger icon
+      const popoutMenu = document.getElementById("popoutMenu");
+
+      // Toggle the .open class on the hamburger to morph into a triangle
       hamburger.classList.toggle("open");
+
+      // Toggle the popout menu's .show class
+      popoutMenu.classList.toggle("show");
     }
   </script>
 </body>
 </html>
+

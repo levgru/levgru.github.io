@@ -43,17 +43,31 @@
     display: none;
     cursor: pointer;
     margin-right: 1rem;
-    transition: transform 0.3s ease;
+    position: relative;
   }
-  .hamburger.open {
-    /* Rotate the hamburger 90 degrees when open */
-    transform: rotate(90deg);
-  }
-  .hamburger .bar {
+  .bar {
     width: 25px;
     height: 3px;
     background-color: #333;
     margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Turn hamburger into a downward triangle by hiding two bars */
+  .hamburger.open .bar1 {
+    /* Triangle shape (downward) using borders */
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 10px solid #333;
+    margin: 0 auto;  /* center horizontally */
+    transform: none; /* override default transition transform */
+  }
+  .hamburger.open .bar2, .hamburger.open .bar3 {
+    opacity: 0;      /* hide them */
+    pointer-events: none;
+    transform: none;
   }
   
   /* LAYOUT */
@@ -86,7 +100,6 @@
     justify-content: center;
   }
   
-  /* The desktop profile pic inside the container */
   .desktop-profile-pic {
     width: 100%;
     height: 100%;
@@ -248,6 +261,46 @@
     height: 28px;
   }
   
+  /* POPUP MENU (MOBILE ONLY) */
+  #popoutMenu {
+    display: none; /* hidden by default */
+    position: absolute;
+    top: 60px;     /* just below the header/hamburger */
+    right: 1rem;
+    width: 160px;  /* how wide you want the overlay */
+    background-color: #b7e9c2; /* your chosen color */
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+  
+    /* For the scale-down-from-top effect */
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: 999; /* ensure it appears on top */
+  }
+  
+  #popoutMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #popoutMenu ul li {
+    margin: 0.5rem 0; /* spacing between links */
+  }
+  
+  #popoutMenu ul li a {
+    text-decoration: none;
+    color: #333; /* text color for links */
+    font-size: 1.1rem;
+  }
+  
+  #popoutMenu.show {
+    display: block;
+    transform: scale(1);
+  }
+  
   /* RESPONSIVE BREAKPOINTS */
   
   /* Tablet and below: Show hamburger icon */
@@ -269,20 +322,9 @@
       margin-left: 0;
     }
   
-    /* The nav is hidden by default; toggled by .active */
+    /* The standard #navbar is hidden on mobile; we use popout instead */
     #navbar {
-      display: none;
-      flex-direction: column;
-      background-color: #f8f9fa;
-      padding: 10px;
-      margin-top: 10px;
-    }
-    #navbar.active {
-      display: flex;
-    }
-    #navbar a {
-      margin: 5px 0;
-      font-size: 1.1rem;
+      display: none !important;
     }
   
     /* The layout container now flows top-down */
