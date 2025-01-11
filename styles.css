@@ -52,7 +52,7 @@
     position: relative;
   }
   .bar {
-    width: 25px;
+    width: 25px;       /* match the triangle base width */
     height: 3px;
     background-color: #333;
     margin: 5px 0;
@@ -61,18 +61,21 @@
   
   /* Turn hamburger into a downward triangle by hiding two bars */
   .hamburger.open .bar1 {
-    /* Triangle shape (downward) using CSS borders */
+    /* This bar becomes a downward-pointing triangle */
     width: 0;
     height: 0;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 10px solid #333;
+    border-left: 12.5px solid transparent; 
+    border-right: 12.5px solid transparent; 
+    border-top: 10px solid #333; /* color matches original bar color */
     margin: 0 auto; /* center horizontally */
+    background-color: transparent; /* ensure no leftover bg color */
   }
   .hamburger.open .bar2,
   .hamburger.open .bar3 {
-    opacity: 0;    /* hide them */
+    opacity: 0;    /* fully hide them */
     pointer-events: none;
+    transform: none;
+    width: 0;      /* prevent leftover bar width from showing */
   }
   
   /* LAYOUT */
@@ -271,7 +274,7 @@
     top: 60px;         /* below the header/hamburger */
     right: 1rem;
     width: 160px;      /* width of the overlay */
-    background-color: #b7e9c2; 
+    background-color: rgba(128,128,128, 0.7); /* semi-transparent gray */
     padding: 1rem;
     border-radius: 6px;
     text-align: center;
