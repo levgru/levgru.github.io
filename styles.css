@@ -129,9 +129,10 @@
     padding: 0;
   }
   .sidebar ul li {
-    display: flex;
     align-items: center;
     margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
   }
   .sidebar ul li a {
     text-decoration: none;

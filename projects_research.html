@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research &amp; Projects</title>
 
-  <!-- Link to your existing CSS with the rest of your site’s color theme & media queries. -->
+  <!-- Link to your existing CSS (contains sidebar, hamburger, timeline, modal, etc.) -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============ HEADER CONTENT ============ -->
+  <!-- ============ HEADER ============ -->
   <header>
     <div class="header-content">
-      <!-- Hamburger icon (shown only on mobile) -->
+      <!-- Hamburger icon (mobile only) -->
       <div class="hamburger" onclick="toggleMenu()">
         <div class="bar bar1"></div>
         <div class="bar bar2"></div>
         <div class="bar bar3"></div>
       </div>
 
-      <!-- Desktop Nav (hidden on mobile) -->
+      <!-- Desktop Nav -->
       <nav id="navbar">
         <a href="index.html">Home</a>
         <a href="research-projects.html">Research &amp; Projects</a>
@@ -29,7 +29,7 @@
     </div>
   </header>
 
-  <!-- POPUP MENU (MOBILE ONLY) -->
+  <!-- POPUP MENU (MOBILE) -->
   <div id="popoutMenu">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -37,183 +37,224 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
-  <!-- ============ END HEADER CONTENT ============ -->
 
-  <div class="container">
-    <h1>Research &amp; Projects</h1>
-    <p style="text-align:center; margin-bottom: 2rem;">
-      Below, you’ll find some of the work I’ve been involved in.
-      Click “Read More” to see details!
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <!-- Example: same as your home page -->
+    <div class="desktop-picture-container">
+      <img
+        src="images/headshot.jpg"
+        alt="Profile Picture"
+        class="desktop-profile-pic"
+      />
+    </div>
+
+    <h2>Lev Gruber</h2>
+    <p>
+      3rd year undergraduate at Harvey Mudd College<br />
+      Researcher in HMC Quantum Optics Group
     </p>
+    <ul>
+      <li>
+        <a href="https://github.com/levgru" target="_blank">
+          <img src="images/github_logo.png" alt="GitHub" class="icon" />
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+          <img
+            src="images/linkedin_logo.png"
+            alt="LinkedIn"
+            class="icon"
+          />
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:lgruber@hmc.edu">
+          <img src="images/email_logo.png" alt="Email" class="icon" />
+          Email
+        </a>
+      </li>
+    </ul>
+  </aside>
 
-    <!-- RESEARCH SECTION HEADING -->
-    <h2 class="section-heading">Research</h2>
-    <div class="timeline">
+  <!-- ============ MAIN CONTENT ============ -->
+  <div class="layout">
+    <!-- We wrap the entire timeline page in a <main> so it can be shifted right. -->
+    <main style="margin-left:220px; padding:20px;">
 
-      <!-- TIMELINE ITEM #1 (Research) -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="card">
-          <!-- Text left -->
-          <div class="card-text">
-            <h3>Research Title 1</h3>
-            <span class="role-dates">Spring 2024 – Present</span>
-            <p>
-              A brief three-sentence overview describing
-              this research. Highlight the main goal,
-              your role, and a key finding.
-            </p>
-            <button class="details-btn" onclick="openModal('modal1')">
-              Read More
-            </button>
+      <!-- Container for the timeline content -->
+      <div class="container">
+        <h1 style="text-align:center;">Research &amp; Projects</h1>
+        <p style="text-align:center; margin-bottom: 2rem;">
+          Below, you’ll find some of the work I’ve been involved in.
+          Click “Read More” to see details!
+        </p>
+
+        <!-- RESEARCH SECTION HEADING -->
+        <h2 class="section-heading">Research</h2>
+        <div class="timeline">
+          <!-- TIMELINE ITEM #1 (Research) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <!-- Text left -->
+              <div class="card-text">
+                <h3>Research Title 1</h3>
+                <span class="role-dates">Spring 2024 – Present</span>
+                <p>
+                  A brief three-sentence overview describing
+                  this research. Highlight the main goal,
+                  your role, and a key finding.
+                </p>
+                <button class="details-btn" onclick="openModal('modal1')">
+                  Read More
+                </button>
+              </div>
+              <!-- Image right -->
+              <div class="card-image">
+                <img src="images/plot_1_example.jpg" alt="Plot or Lab Image" />
+              </div>
+            </div>
           </div>
-          <!-- Image right -->
-          <div class="card-image">
-            <img src="images/plot_1_example.jpg" alt="Plot or Lab Image" />
+
+          <!-- Modal #1 -->
+          <div class="modal-overlay" id="modal1">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+              <h3>Research Title 1 - Detailed Description</h3>
+              <p>
+                Your extended background info, methodology, results,
+                and reflections. You can add more paragraphs, bullet
+                points, or images below.
+              </p>
+              <img src="images/plot_1_example_full.jpg" alt="Full Plot" class="modal-image" />
+              <p>Optional: More data, or a link to your paper or GitHub.</p>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Modal #1 for Research 1 -->
-      <div class="modal-overlay" id="modal1">
-        <div class="modal-content">
-          <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
-          <h3>Research Title 1 - Detailed Description</h3>
-          <p>
-            Your extended background info, methodology, results,
-            and reflections. You can add more paragraphs, bullet
-            points, or images below.
-          </p>
-          <img src="images/plot_1_example_full.jpg" alt="Full Plot" class="modal-image" />
-          <p>
-            Optional: More data, a link to your paper or GitHub,
-            or an additional figure.
-          </p>
-        </div>
-      </div>
-
-      <!-- TIMELINE ITEM #2 (Research) -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="card">
-          <div class="card-text">
-            <h3>Research Title 2</h3>
-            <span class="role-dates">Summer 2023</span>
-            <p>
-              Another short overview—mention the main topic,
-              techniques, and your primary contributions.
-            </p>
-            <button class="details-btn" onclick="openModal('modal2')">
-              Read More
-            </button>
+          <!-- TIMELINE ITEM #2 (Research) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Research Title 2</h3>
+                <span class="role-dates">Summer 2023</span>
+                <p>
+                  Another short overview—mention the main topic,
+                  techniques, and your primary contributions.
+                </p>
+                <button class="details-btn" onclick="openModal('modal2')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="images/plot_2_example.jpg" alt="Plot or Lab Image" />
+              </div>
+            </div>
           </div>
-          <div class="card-image">
-            <img src="images/plot_2_example.jpg" alt="Plot or Lab Image" />
-          </div>
-        </div>
-      </div>
 
-      <!-- Modal #2 for Research 2 -->
-      <div class="modal-overlay" id="modal2">
-        <div class="modal-content">
-          <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
-          <h3>Research Title 2 - Detailed Info</h3>
-          <p>
-            Deeper explanation of the problem, the lab or
-            environment, plus specific results or data.
-          </p>
-          <img src="images/plot_2_example_full.jpg" alt="Full Plot" class="modal-image" />
-          <p>Additional notes, references, or next steps.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECTS SECTION HEADING -->
-    <h2 class="section-heading">Projects</h2>
-    <div class="timeline">
-
-      <!-- TIMELINE ITEM #3 (Project 1) -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="card">
-          <div class="card-text">
-            <h3>Project Title 1</h3>
-            <span class="role-dates">Personal Project, 2024</span>
-            <p>
-              Quick summary of your project or app.
-              Mention the main technology or approach
-              you used.
-            </p>
-            <button class="details-btn" onclick="openModal('modal3')">
-              Read More
-            </button>
-          </div>
-          <div class="card-image">
-            <img src="images/project_1_example.jpg" alt="Project Screenshot" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal #3 (Project 1) -->
-      <div class="modal-overlay" id="modal3">
-        <div class="modal-content">
-          <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
-          <h3>Project Title 1 - Detailed Info</h3>
-          <p>
-            Extended explanation: Why you built it,
-            the challenges you overcame, what you learned.
-          </p>
-          <img src="images/project_1_example_full.jpg" alt="More Project Shots" class="modal-image" />
-          <p>Links to GitHub or a live demo if applicable.</p>
-        </div>
-      </div>
-
-      <!-- TIMELINE ITEM #4 (Project 2) -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="card">
-          <div class="card-text">
-            <h3>Project Title 2</h3>
-            <span class="role-dates">Course Project, 2023</span>
-            <p>
-              A short overview describing the project's
-              objectives, your teammates (if any),
-              and main outcome.
-            </p>
-            <button class="details-btn" onclick="openModal('modal4')">
-              Read More
-            </button>
-          </div>
-          <div class="card-image">
-            <img src="images/project_2_example.jpg" alt="Project Screenshot" />
+          <!-- Modal #2 -->
+          <div class="modal-overlay" id="modal2">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+              <h3>Research Title 2 - Detailed Info</h3>
+              <p>
+                Deeper explanation of the problem, the lab or
+                environment, plus specific results or data.
+              </p>
+              <img src="images/plot_2_example_full.jpg" alt="Full Plot" class="modal-image" />
+              <p>Additional notes, references, or next steps.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Modal #4 (Project 2) -->
-      <div class="modal-overlay" id="modal4">
-        <div class="modal-content">
-          <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
-          <h3>Project Title 2 - Detailed Info</h3>
-          <p>
-            Dive into the specifics: design decisions,
-            technical implementation, and results.
-          </p>
-          <img src="images/project_2_example_full.jpg" alt="More Project Shots" class="modal-image" />
-          <p>Lessons learned, future improvements, etc.</p>
+        <!-- PROJECTS SECTION HEADING -->
+        <h2 class="section-heading">Projects</h2>
+        <div class="timeline">
+          <!-- TIMELINE ITEM #3 (Project 1) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Project Title 1</h3>
+                <span class="role-dates">Personal Project, 2024</span>
+                <p>
+                  Quick summary of your project or app.
+                  Mention the main technology or approach
+                  you used.
+                </p>
+                <button class="details-btn" onclick="openModal('modal3')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="images/project_1_example.jpg" alt="Project Screenshot" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #3 -->
+          <div class="modal-overlay" id="modal3">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+              <h3>Project Title 1 - Detailed Info</h3>
+              <p>
+                Extended explanation: Why you built it,
+                the challenges you overcame, what you learned.
+              </p>
+              <img src="images/project_1_example_full.jpg" alt="More Project Shots" class="modal-image" />
+              <p>Links to GitHub or a live demo if applicable.</p>
+            </div>
+          </div>
+
+          <!-- TIMELINE ITEM #4 (Project 2) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Project Title 2</h3>
+                <span class="role-dates">Course Project, 2023</span>
+                <p>
+                  A short overview describing the project's
+                  objectives, your teammates (if any),
+                  and main outcome.
+                </p>
+                <button class="details-btn" onclick="openModal('modal4')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="images/project_2_example.jpg" alt="Project Screenshot" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #4 -->
+          <div class="modal-overlay" id="modal4">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
+              <h3>Project Title 2 - Detailed Info</h3>
+              <p>
+                Dive into the specifics: design decisions,
+                technical implementation, and results.
+              </p>
+              <img src="images/project_2_example_full.jpg" alt="More Project Shots" class="modal-image" />
+              <p>Lessons learned, future improvements, etc.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div> <!-- end .container -->
+    </main>
+  </div> <!-- end .layout -->
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Lev Gruber</p>
-  </footer> 
+  <!-- Optionally, add a footer here if you want the same as your home page. -->
 
-  <!-- JavaScript (reusing your site’s toggleMenu and modal open/close) -->
+  <!-- ============ SCRIPTS ============ -->
   <script>
-    // Reuse your existing hamburger -> popout menu script
+    // Hamburger toggles
     function toggleMenu() {
       const hamburger = document.querySelector(".hamburger");
       const popoutMenu = document.getElementById("popoutMenu");
@@ -221,7 +262,7 @@
       popoutMenu.classList.toggle("show");
     }
 
-    // For modals
+    // Modal open/close
     function openModal(modalId) {
       const overlay = document.getElementById(modalId);
       if (overlay) {
@@ -235,5 +276,6 @@
       }
     }
   </script>
+
 </body>
 </html>
