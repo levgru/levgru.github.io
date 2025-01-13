@@ -346,4 +346,222 @@
       display: block !important;
     }
   }
-  
+
+    /* ---------------------------------------
+       GENERAL COLOR PALETTE (earthy neutrals)
+    --------------------------------------- */
+:root {
+    --bg-color: #FFF8F0;      /* Off-white background */
+    --text-color: #4D3E3E;    /* Warm brown text */
+    --accent-color: #F2B880;  /* Soft peach */
+    --accent-hover: #F28C38;  /* Darker peach/orange */
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+/* Ensure the entire page background matches theme */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Basic container to give some breathing room */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Headings / Titles */
+h1, h2, h3 {
+    margin: 0;
+}
+h1 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+p {
+    margin: 0;
+}
+
+/* ---------------------------------------
+    TIMELINE WRAPPER
+    A vertical line on the left, with dots
+--------------------------------------- */
+.timeline {
+    position: relative;
+    margin-left: 2rem; /* space for the line + dots */
+    padding-left: 1rem; /* ensure content isn't flush against the line */
+    border-left: 3px solid var(--accent-color); /* the timeline line */
+}
+
+/* Each "item" along the timeline */
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem; /* space between cards */
+}
+
+/* The dot on the timeline */
+.timeline-dot {
+    position: absolute;
+    left: -0.6rem; /* adjust to center dot on line */
+    top: 0.3rem;   /* adjust so it's aligned with the card */
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 2px solid #FFF8F0; /* small border matching bg for contrast */
+}
+
+/* ---------------------------------------
+    CARD STYLES
+    Rounded corners, image on the right
+--------------------------------------- */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    display: flex; /* to place text left, image right */
+    align-items: center;
+    overflow: hidden; /* in case of rounding + images */
+    border: 2px solid var(--accent-color);
+    max-width: 100%;
+}
+
+/* Left text container */
+.card-text {
+    width: 55%;
+    padding: 1rem;
+}
+
+.card-text h3 {
+    margin-bottom: 0.25rem;
+}
+.card-text .role-dates {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.card-text p {
+    margin-bottom: 1rem;
+}
+
+/* "Read More" button */
+.details-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+.details-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Right image container */
+.card-image {
+    width: 45%;
+    overflow: hidden; /* for rounded corners if image is large */
+}
+.card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ---------------------------------------
+    SEPARATORS FOR "RESEARCH" & "PROJECTS"
+--------------------------------------- */
+.section-heading {
+    margin: 2rem 0 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* ---------------------------------------
+    MODAL OVERLAY
+--------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0; /* top, right, bottom, left = 0 */
+    background-color: rgba(0,0,0,0.6);
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Show the modal when .active is added */
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto; /* scroll if content is tall */
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 3px solid var(--accent-color);
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Example styling for headings / images inside the modal */
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.modal-content .modal-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Responsive adjustments on smaller screens */
+@media (max-width: 768px) {
+    .timeline {
+    margin-left: 1rem; 
+    padding-left: 0.5rem;
+    border-left-width: 2px; /* thinner line for mobile */
+    }
+    .timeline-dot {
+    left: -0.75rem;
+    }
+    .card {
+    flex-direction: column; /* stack text & image */
+    }
+    .card-text, .card-image {
+    width: 100%;
+    }
+}
+
