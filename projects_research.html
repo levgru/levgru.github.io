@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research & Projects</title>
+  
+  <!-- If you have an external CSS file with your color scheme, link it here:
+  <link rel="stylesheet" href="styles.css" />
+  -->
+
+  <!-- Minimal style overrides for timeline layout + modal -->
+  <style>
+    /* ---------------------------------------
+       GENERAL COLOR PALETTE (earthy neutrals)
+       Feel free to adjust to match your site
+    --------------------------------------- */
+    :root {
+      --bg-color: #FFF8F0;      /* Off-white background */
+      --text-color: #4D3E3E;    /* Warm brown text */
+      --accent-color: #F2B880;  /* Soft peach */
+      --accent-hover: #F28C38;  /* Darker peach/orange */
+      --shadow-color: rgba(0,0,0,0.1);
+    }
+
+    /* Ensure the entire page background matches your theme */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    /* Basic container to give some breathing room */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* Headings / Titles */
+    h1, h2, h3 {
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    p {
+      margin: 0;
+    }
+
+    /* ---------------------------------------
+       TIMELINE WRAPPER
+       A vertical line on the left, with dots
+    --------------------------------------- */
+    .timeline {
+      position: relative;
+      margin-left: 2rem; /* space for the line + dots */
+      padding-left: 1rem; /* ensure content isn't flush against the line */
+      border-left: 3px solid var(--accent-color); /* the timeline line */
+    }
+
+    /* Each "item" along the timeline */
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem; /* space between cards */
+    }
+
+    /* The dot on the timeline */
+    .timeline-dot {
+      position: absolute;
+      left: -0.6rem; /* adjust to center dot on line */
+      top: 0.3rem;   /* adjust so it's aligned with the card */
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      border: 2px solid #FFF8F0; /* small border matching bg for contrast */
+    }
+
+    /* ---------------------------------------
+       CARD STYLES
+       Rounded corners, image on the right
+    --------------------------------------- */
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px var(--shadow-color);
+      display: flex; /* to place text left, image right */
+      align-items: center;
+      overflow: hidden; /* in case of rounding + images */
+      border: 2px solid var(--accent-color);
+      max-width: 100%;
+    }
+
+    /* Left text container */
+    .card-text {
+      width: 55%;
+      padding: 1rem;
+    }
+
+    .card-text h3 {
+      margin-bottom: 0.25rem;
+    }
+    .card-text .role-dates {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .card-text p {
+      margin-bottom: 1rem;
+    }
+
+    /* "Read More" button */
+    .details-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 25px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+    .details-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Right image container */
+    .card-image {
+      width: 45%;
+      overflow: hidden; /* for rounded corners if image is large */
+    }
+    .card-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* ---------------------------------------
+       SEPARATORS FOR "RESEARCH" & "PROJECTS"
+    --------------------------------------- */
+    .section-heading {
+      margin: 2rem 0 1rem;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+
+    /* ---------------------------------------
+       MODAL OVERLAY
+    --------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0; /* top, right, bottom, left = 0 */
+      background-color: rgba(0,0,0,0.6);
+      display: none; /* hidden by default */
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Show the modal when .active is added */
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto; /* scroll if content is tall */
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      border: 3px solid var(--accent-color);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.75rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+
+    /* Example styling for headings / images inside the modal */
+    .modal-content h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .modal-content .modal-image {
+      width: 100%;
+      max-width: 100%;
+      margin: 1rem 0;
+      border: 2px solid var(--accent-color);
+      border-radius: 5px;
+    }
+
+    /* Responsive adjustments on smaller screens */
+    @media (max-width: 768px) {
+      .timeline {
+        margin-left: 1rem; 
+        padding-left: 0.5rem;
+        border-left-width: 2px; /* thinner line for mobile */
+      }
+      .timeline-dot {
+        left: -0.75rem;
+      }
+      .card {
+        flex-direction: column; /* stack text & image */
+      }
+      .card-text, .card-image {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Research &amp; Projects</h1>
+    <p style="text-align:center; margin-bottom: 2rem;">
+      Below, you’ll find some of the work I’ve been involved in.  
+      Click “Read More” to see details!
+    </p>
+
+    <!-- RESEARCH SECTION HEADING -->
+    <h2 class="section-heading">Research</h2>
+    <div class="timeline">
+
+      <!-- TIMELINE ITEM #1 (Research) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="card">
+          <!-- Text left -->
+          <div class="card-text">
+            <h3>Research Title 1</h3>
+            <span class="role-dates">Spring 2024 – Present</span>
+            <p>
+              A brief three-sentence overview describing 
+              this research. Highlight the main goal, 
+              your role, and a key finding.
+            </p>
+            <button class="details-btn" onclick="openModal('modal1')">
+              Read More
+            </button>
+          </div>
+          <!-- Image right -->
+          <div class="card-image">
+            <img src="images/plot_1_example.jpg" alt="Plot or Lab Image" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal #1 for Research 1 -->
+      <div class="modal-overlay" id="modal1">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+          <h3>Research Title 1 - Detailed Description</h3>
+          <p>
+            Your extended background info, methodology, results, 
+            and reflections. You can add more paragraphs, bullet 
+            points, or images below.
+          </p>
+          <img src="images/plot_1_example_full.jpg" alt="Full Plot" class="modal-image" />
+          <p>
+            Optional: More data, a link to your paper or GitHub, 
+            or an additional figure.
+          </p>
+        </div>
+      </div>
+
+      <!-- TIMELINE ITEM #2 (Research) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="card">
+          <div class="card-text">
+            <h3>Research Title 2</h3>
+            <span class="role-dates">Summer 2023</span>
+            <p>
+              Another short overview—mention the main topic, 
+              techniques, and your primary contributions.
+            </p>
+            <button class="details-btn" onclick="openModal('modal2')">
+              Read More
+            </button>
+          </div>
+          <div class="card-image">
+            <img src="images/plot_2_example.jpg" alt="Plot or Lab Image" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal #2 for Research 2 -->
+      <div class="modal-overlay" id="modal2">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+          <h3>Research Title 2 - Detailed Info</h3>
+          <p>
+            Deeper explanation of the problem, the lab or 
+            environment, plus specific results or data. 
+          </p>
+          <img src="images/plot_2_example_full.jpg" alt="Full Plot" class="modal-image" />
+          <p>Additional notes, references, or next steps.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS SECTION HEADING -->
+    <h2 class="section-heading">Projects</h2>
+    <div class="timeline">
+
+      <!-- TIMELINE ITEM #3 (Project 1) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="card">
+          <div class="card-text">
+            <h3>Project Title 1</h3>
+            <span class="role-dates">Personal Project, 2024</span>
+            <p>
+              Quick summary of your project or app. 
+              Mention the main technology or approach 
+              you used.
+            </p>
+            <button class="details-btn" onclick="openModal('modal3')">
+              Read More
+            </button>
+          </div>
+          <div class="card-image">
+            <img src="images/project_1_example.jpg" alt="Project Screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal #3 (Project 1) -->
+      <div class="modal-overlay" id="modal3">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+          <h3>Project Title 1 - Detailed Info</h3>
+          <p>
+            Extended explanation: Why you built it, 
+            the challenges you overcame, what you learned.
+          </p>
+          <img src="images/project_1_example_full.jpg" alt="More Project Shots" class="modal-image" />
+          <p>Links to GitHub or a live demo if applicable.</p>
+        </div>
+      </div>
+
+      <!-- TIMELINE ITEM #4 (Project 2) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="card">
+          <div class="card-text">
+            <h3>Project Title 2</h3>
+            <span class="role-dates">Course Project, 2023</span>
+            <p>
+              A short overview describing the project's 
+              objectives, your teammates (if any), 
+              and main outcome.
+            </p>
+            <button class="details-btn" onclick="openModal('modal4')">
+              Read More
+            </button>
+          </div>
+          <div class="card-image">
+            <img src="images/project_2_example.jpg" alt="Project Screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal #4 (Project 2) -->
+      <div class="modal-overlay" id="modal4">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
+          <h3>Project Title 2 - Detailed Info</h3>
+          <p>
+            Dive into the specifics: design decisions, 
+            technical implementation, and results. 
+          </p>
+          <img src="projects/example_plot.png" alt="More Project Shots" class="modal-image" />
+          <p>Lessons learned, future improvements, etc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal JavaScript for opening/closing modals -->
+  <script>
+    function openModal(modalId) {
+      const overlay = document.getElementById(modalId);
+      if (overlay) {
+        overlay.classList.add('active');
+      }
+    }
+
+    function closeModal(modalId) {
+      const overlay = document.getElementById(modalId);
+      if (overlay) {
+        overlay.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
+
