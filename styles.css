@@ -131,10 +131,13 @@
   .sidebar ul li {
     align-items: center;
     margin-bottom: 10px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
   }
   .sidebar ul li a {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
     text-decoration: none;
     color: #4D3E3E;
     margin-left: 10px;
@@ -147,6 +150,8 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+    margin-right: 0.5rem;
+    vertical-align: middle;
   }
   
   /* MAIN CONTENT */
@@ -330,7 +335,7 @@
   
     /* Let main fill the width */
     main {
-      margin-left: 0;
+      margin-left: 0 !important;
     }
   
     /* Hide #navbar on mobile in favor of popoutMenu */
@@ -565,4 +570,8 @@ p {
     width: 100%;
     }
 }
+.intro h1 {
+    text-align: left !important; /* override any previous center rule */
+    margin-left: 0; /* no forced left margin */
+  }
 
