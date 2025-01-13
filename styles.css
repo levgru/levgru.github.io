@@ -476,14 +476,19 @@ p {
 
 /* Right image container */
 .card-image {
-    width: 45%;
-    overflow: hidden; /* for rounded corners if image is large */
+    width: 45%;          /* or 45% */
+    padding: 10px;
+    display: flex;       /* center the image horizontally & vertically inside */
+    align-items: center;
+    justify-content: center;
 }
 .card-image img {
-    display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 100%;
     object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
 }
 
 /* ---------------------------------------
@@ -519,7 +524,7 @@ p {
     background-color: var(--bg-color);
     color: var(--text-color);
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 1200px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto; /* scroll if content is tall */
