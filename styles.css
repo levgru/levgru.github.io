@@ -580,3 +580,147 @@ p {
     margin-left: 0; /* no forced left margin */
   }
 
+/* Container that holds the form */
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-container p {
+  margin-bottom: 1rem;
+}
+
+/* Form elements */
+.contact-form-container form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: 500;
+}
+
+.contact-form-container form input[type="text"],
+.contact-form-container form input[type="email"],
+.contact-form-container form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* The "Send Message" button */
+.contact-btn {
+  display: inline-block;
+  background-color: var(--accent-color, #F2B880); /* or your color scheme */
+  color: var(--text-color, #4D3E3E);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: var(--accent-hover, #F28C38);
+  transform: translateY(-2px);
+}
+
+/* reCAPTCHA widget margin */
+[data-netlify-recaptcha="true"] {
+  margin: 1rem 0;
+}
+
+/* Success message styling */
+.success-message {
+  background-color: #d4edda; /* light green */
+  color: #155724;
+  border: 2px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Hide honeypot field visually */
+.hidden {
+  display: none;
+}
+/* Container that holds the form */
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-container p {
+  margin-bottom: 1rem;
+}
+
+/* Form elements */
+.contact-form-container form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: 500;
+}
+
+.contact-form-container form input[type="text"],
+.contact-form-container form input[type="email"],
+.contact-form-container form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* The "Send Message" button */
+.contact-btn {
+  display: inline-block;
+  background-color: var(--accent-color, #F2B880); /* or your color scheme */
+  color: var(--text-color, #4D3E3E);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: var(--accent-hover, #F28C38);
+  transform: translateY(-2px);
+}
+
+/* reCAPTCHA widget margin */
+[data-netlify-recaptcha="true"] {
+  margin: 1rem 0;
+}
+
+/* Success message styling */
+.success-message {
+  background-color: #d4edda; /* light green */
+  color: #155724;
+  border: 2px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Hide honeypot field visually */
+.hidden {
+  display: none;
+}
+
+
