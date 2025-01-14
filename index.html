@@ -191,102 +191,102 @@
       <section class="projects">
         <h2>Projects</h2>
         <ul>
-          <li>
-            <div class="collapsible" onclick="toggleProject(this)">
-              <span class="project-title">
-                Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers,
-                <b>Spring 2024</b>
-              </span>
-              <span class="toggle-icon">+</span>
-            </div>
-            <!-- Hidden content container -->
-            <div class="project-content">
-              <p>
-                Variational quantum eigensolvers (VQEs) are a type of algorithm
-                that map a hamiltonian to a quantum circuit to calculate the ground
-                state energy of a system. VQEs are strong due to them using
-                classical and quantum computers for their respective
-                strengths--the first for optimization and the second for measuring
-                the qubits in our quantum circuit. <br />I calculated the ground
-                state energies of ammonia NH<sub>3</sub> in various configurations,
-                demonstrating a symmetric dual minima potential (SDMP) between two
-                states using Qiskit VQE implementations and the IBM Cloud Platform.
-                Figure 1 includes results from both a noiseless and noisy quantum
-                computer simulator. See the links below for a longer write up,
-                results using IBM's quantum computer in Kyoto, an example
-                calculation of H<sub>2</sub> ground state energy included,
-                and all code involved.
-              </p>
-              <div class="button-container">
-                <a
-                  href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
-                  class="button"
-                  target="_blank"
-                >
-                  Read the Write Up
-                </a>
-                <a
-                  href="https://github.com/levgru/lg_nh3_vqe_project/"
-                  class="button"
-                  target="_blank"
-                >
-                  View Code on GitHub
-                </a>
-              </div>
-              <div class="image-container">
-                <img
-                  src="projects/nh3_sdmp/example_plot.png"
-                  alt="Ammonia SDMP"
-                  class="outlined-image"
-                />
-                <figcaption>
-                  <i>Figure 1.</i> Ammonia ground state energy as a function of
-                  nitrogen distance from planar hydrogens.
-                </figcaption>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible" onclick="toggleProject(this)">
-              <span class="project-title">
-                Modeling Bio-Materials to Second Order
-                <b>Fall 2024</b>
-              </span>
-              <span class="toggle-icon">+</span>
-            </div>
-            <!-- Hidden content container -->
-            <div class="project-content">
-              <p>
-                Material properties of a spring determine the proportionality between its restorative force and displacement. In the large strain limit, certain biological materials behave with growing stiffness; collaborator Charlie Schofield and I simulated this behavior using a second order correction term to Hooke's law. We then simulated a simplified biological system by putting massless, non-linear springs in series in between masses representing joints. Using Python and Mathematica, we derived and evaluated the non-analytically solvable equations of motion to view chaotic behavior as we varied spring constants, masses, and initial conditions.
-              </p>
-              <div class="button-container">
-                <a
-                  href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf"
-                  class="button"
-                  target="_blank"
-                >
-                  Read the Write Up
-                </a>
-                <a
-                  href="https://github.com/levgru/phys111_gruber_schofield/"
-                  class="button"
-                  target="_blank"
-                >
-                  View Code on GitHub
-                </a>
-              </div>
-              <div class="image-container">
-                <img
-                  src="projects/biological_springs/example_plot.png"
-                  alt="Bio Springs"
-                  class="outlined-image"
-                />
-                <figcaption>
-                  <i>Figure 1.</i> Classical non-chaotic system analog using equal masses and spring constants. Initial positions are both zero relative to equilibrium, the first mass' velocity is zero and the second is 0.5 m/s towards the first mass.
-                </figcaption>
-              </div>
-            </div>
-          </li>
+            <li>
+                <div class="collapsible" onclick="toggleProject(this)">
+                    <span class="project-title">
+                    Modeling Bio-Materials to Second Order
+                    <b>Fall 2024</b>
+                    </span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <!-- Hidden content container -->
+                <div class="project-content">
+                    <p>
+                    Material properties of a spring determine the proportionality between its restorative force and displacement. In the large strain limit, certain biological materials behave with growing stiffness; collaborator Charlie Schofield and I simulated this behavior using a second order correction term to Hooke's law. We then simulated a simplified biological system by putting massless, non-linear springs in series in between masses representing joints. Using Python and Mathematica, we derived and evaluated the non-analytically solvable equations of motion to view chaotic behavior as we varied spring constants, masses, and initial conditions.
+                    </p>
+                    <div class="button-container">
+                    <a
+                        href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf"
+                        class="button"
+                        target="_blank"
+                    >
+                        Read the Write Up
+                    </a>
+                    <a
+                        href="https://github.com/levgru/phys111_gruber_schofield/"
+                        class="button"
+                        target="_blank"
+                    >
+                        View Code on GitHub
+                    </a>
+                    </div>
+                    <div class="image-container">
+                    <img
+                        src="projects/biological_springs/example_plot.png"
+                        alt="Bio Springs"
+                        class="outlined-image"
+                    />
+                    <figcaption>
+                        <i>Figure 1.</i> Classical non-chaotic system analog using equal masses and spring constants. Initial positions are both zero relative to equilibrium, the first mass' velocity is zero and the second is 0.5 m/s towards the first mass.
+                    </figcaption>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible" onclick="toggleProject(this)">
+                <span class="project-title">
+                    Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers,
+                    <b>Spring 2024</b>
+                </span>
+                <span class="toggle-icon">+</span>
+                </div>
+                <!-- Hidden content container -->
+                <div class="project-content">
+                <p>
+                    Variational quantum eigensolvers (VQEs) are a type of algorithm
+                    that map a hamiltonian to a quantum circuit to calculate the ground
+                    state energy of a system. VQEs are strong due to them using
+                    classical and quantum computers for their respective
+                    strengths--the first for optimization and the second for measuring
+                    the qubits in our quantum circuit. <br />I calculated the ground
+                    state energies of ammonia NH<sub>3</sub> in various configurations,
+                    demonstrating a symmetric dual minima potential (SDMP) between two
+                    states using Qiskit VQE implementations and the IBM Cloud Platform.
+                    Figure 1 includes results from both a noiseless and noisy quantum
+                    computer simulator. See the links below for a longer write up,
+                    results using IBM's quantum computer in Kyoto, an example
+                    calculation of H<sub>2</sub> ground state energy included,
+                    and all code involved.
+                </p>
+                <div class="button-container">
+                    <a
+                    href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
+                    class="button"
+                    target="_blank"
+                    >
+                    Read the Write Up
+                    </a>
+                    <a
+                    href="https://github.com/levgru/lg_nh3_vqe_project/"
+                    class="button"
+                    target="_blank"
+                    >
+                    View Code on GitHub
+                    </a>
+                </div>
+                <div class="image-container">
+                    <img
+                    src="projects/nh3_sdmp/example_plot.png"
+                    alt="Ammonia SDMP"
+                    class="outlined-image"
+                    />
+                    <figcaption>
+                    <i>Figure 1.</i> Ammonia ground state energy as a function of
+                    nitrogen distance from planar hydrogens.
+                    </figcaption>
+                </div>
+                </div>
+            </li>
         </ul>
       </section>
     </main>
