@@ -521,6 +521,10 @@ p {
 }
 
 .modal-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     background-color: var(--bg-color);
     color: var(--text-color);
     border-radius: 8px;
