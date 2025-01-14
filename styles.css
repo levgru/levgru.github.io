@@ -561,6 +561,14 @@ p {
     border: 2px solid var(--accent-color);
     border-radius: 5px;
 }
+.modal-content .modal-pdf {
+    max-width: 80%;
+    width: auto; /* Full width */
+    height: 600px; /* Adjust height as needed */
+    margin: 1rem 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+}
 
 /* Responsive adjustments on smaller screens */
 @media (max-width: 768px) {
