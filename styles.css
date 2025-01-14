@@ -551,8 +551,8 @@ p {
     margin-bottom: 0.5rem;
 }
 .modal-content .modal-image {
-    width: 75%;
-    max-width: 100%;
+    max-width: 45%;
+    width: auto;
     margin: 1rem 0;
     border: 2px solid var(--accent-color);
     border-radius: 5px;
