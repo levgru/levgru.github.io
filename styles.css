@@ -561,17 +561,17 @@
   /* reduce spacing between elements in the modal */
   .modal-content h3 {
     margin-top: 0;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
   }
   .modal-content p {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
   }
   
   /* PDF container */
   .pdf-container {
     display: flex;
     justify-content: center;
-    margin: 0.4rem 0;
+    margin: 0.6rem 0;
   }
   .pdf-95 {
     width: 95% !important;
@@ -586,7 +586,7 @@
   .single-image-row {
     display: flex;
     justify-content: center;
-    margin: 0.4rem 0;
+    margin: 0.6rem 0;
   }
   .single-image-95 {
     width: 95% !important;
@@ -603,8 +603,8 @@
     display: flex;
     justify-content: space-between;
     width: 95%;
-    margin: 0.4rem auto;
-    gap: 0.4rem;
+    margin: 0.6rem auto;
+    gap: 0.6rem;
   }
   .two-image-row-95 .half-img {
     width: 49%;
@@ -675,7 +675,7 @@
     }
     .two-image-row-95 .half-img {
       width: 100%;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
     }
   }
   
