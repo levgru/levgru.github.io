@@ -613,6 +613,13 @@
     box-shadow: 0 0 3px rgba(0,0,0,0.15);
   }
   
+footer {
+    background-color: #4D3E3E; /* or any color */
+    color: #FFF8F0;
+    text-align: center;
+    padding: 0.5rem;
+    /* etc. */
+}
   /* ===============================
      11) RESPONSIVE BREAKPOINTS
   =============================== */
