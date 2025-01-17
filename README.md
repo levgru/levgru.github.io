@@ -1,3 +1,3 @@
 # Portfolio
 
-A simple portfolio with links to past and current research, projects, and an updated resume. For more info, please reach out via email!
+A simple portfolio with links to past and current research and projects. Hosted on levgruber.com.
