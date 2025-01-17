@@ -7,6 +7,10 @@
 
   <!-- Link to your existing CSS (contains sidebar, hamburger, timeline, modal, etc.) -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
 </head>
 <body>
 
@@ -89,7 +93,6 @@
       <div class="container">
         <h1 style="text-align:center;">Research and Projects</h1>
         
-
         <!-- RESEARCH SECTION HEADING -->
         <h2 class="section-heading">Research</h2>
         <div class="timeline">
@@ -124,7 +127,14 @@
                 Quantum cryptography utilizes quantum entanglement to secure data against the threat of quantum computing. Detecting entanglement is necessary for secure and efficient long-distance quantum communication. Entanglement witnessing is an efficient method of detecting entanglement locally without requiring a full tomography, which minimizes the number of measurements required compared to traditional methods. <br>
                 As part of the group since last Spring, I've contributed to experimental demonstrations of a two-step process for detecting entanglement in unknown two-photon states, working directly with the optics apparatus and using data analysis via Python. See our Summer 2024 poster for some recent work and check back in the Spring for updates on my theoretical work for the group.
               </p>
-              <embed src="research/qo_group/Summer_research_poster_2024.pdf" type="application/pdf" width="100%" height="600px" class="modal-pdf" />
+              <!-- PDF embed at 75% width, centered -->
+              <div class="pdf-container">
+                <embed src="research/qo_group/Summer_research_poster_2024.pdf"
+                  type="application/pdf"
+                  class="modal-pdf pdf-75"
+                  height="600px"
+                />
+              </div>
             </div>
           </div>
 
@@ -157,7 +167,10 @@
                 Two-dimensional and zero-dimensional materials are undoubtedly useful for applications in efficient solar cells and biomedical devices. The Quantum Materials and Nanodevice Laboratory investigates the properties of materials as thick as one or two atoms, including graphene, MoS<sub>2</sub>, MoSe<sub>2</sub>, WS<sub>2</sub>, and WSe<sub>2</sub>. <br>
                   During Summer 2023, I worked to replicate a sensitivity to substrate preparation seen in monolayer (1 atom thick) MoS<sub>2</sub> samples seen in previous literature. To do so I exfoliated samples using the scotch tape method, found monolayers using a microscope, found their Raman peaks using a Raman spectrometer, and analyzed data using Python. The Raman spectrums showed unique features in glove box-prepared samples, such as a 'baby bump' on the E peak and splitting of the A mode, absent in ambient-prepared samples. These differences provide insights into environmental effects on monolayer properties, relevant for device fabrication. See the figure below.
               </p>
-              <img src="research/mos2/overall_plot_comparison_mos2.png" alt="Full Plot" class="modal-image" />
+              <!-- Single image at 75% width, centered -->
+              <div class="single-image-row">
+                <img src="research/mos2/overall_plot_comparison_mos2.png" alt="Full Plot" class="modal-image single-image-75" />
+              </div>
             </div>
           </div>
         </div>
@@ -193,23 +206,32 @@
               <p>
                 Polymeric materials are biological materials in which repeated microscopic units lead to interesting macroscopic properties. These materials often have different moderate and high strain limits than those expected for linear Hooke's Law systems, meaning a non-linear relationship between the spring's restorative force to its displacement, characterized by different regimes dependent on the tension applied. In the moderate displacement regime, a material yields and is easier to stretch than low displacement, and in the large displacement regime the limiting factor becomes how much individual monomers can stretch. For my classmate Charlie Schofield's and my Theoretical Mechanics course computational project, we modeled these two regimes using a non-linear correction term to Hooke's Law. <br> We used Python and Mathematica to solve the non-analytically solvable equations of motion for this system, creating position vs. time, velocity vs. position, and Poincare maps to view dynamic behavior. See below for an example plot as we varied spring constants, the Github repository for all code, and the write up for all of our gathered data.
               </p>
-                <div class="button-container">
+
+              <!-- Buttons left-aligned with text (inline) -->
+              <div class="button-container" style="justify-content: flex-start;">
                 <a
-                    href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf"
-                    class="button"
-                    target="_blank"
+                  href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf"
+                  class="button"
+                  target="_blank"
                 >
-                    Read the Write Up
+                  Read the Write Up
                 </a>
                 <a
-                    href="https://github.com/levgru/phys111_gruber_schofield/"
-                    class="button"
-                    target="_blank"
+                  href="https://github.com/levgru/phys111_gruber_schofield/"
+                  class="button"
+                  target="_blank"
                 >
-                    View Code on GitHub
+                  View Code on GitHub
                 </a>
-                </div>
-              <img src="projects/biological_springs/varying_springs_equal_mass.png" alt="More Project Shots" class="modal-image" />
+              </div>
+
+              <!-- Two images below the buttons, side by side, total 75% width -->
+              <div class="two-image-row-75">
+                <!-- FIRST IMAGE -->
+                <img src="projects/biological_springs/varying_springs_equal_mass.png" alt="More Project Shots" class="modal-image half-img" />
+                <!-- Place for second image if you add one in the future -->
+                <img src="projects/biological_springs/placeholder.png" alt="Placeholder or second image" class="modal-image half-img" />
+              </div>
             </div>
           </div>
 
@@ -244,26 +266,30 @@
                 The nitrogen atom in ammonia (NH<sub>3</sub>) is able to tunnel through the plane formed by the three hydrogen atoms, a phenomenon known as umbrella inversion. This quantum mechanical effect is a classic example of tunneling, where the nitrogen atom moves between two equivalent configurations. We expect the corresponding plot of energy versus nitrogen position from the planar hydrogens to have a symmetric dual minima potential (SDMP). Using variational quantum eigensolvers (VQEs), we can simulate this process and calculate the ground state energy of the molecule at various distances. VQEs are powerful quantum algorithms that map a problem's Hamiltonian to a variational quantum circuit, calculate the energy, and iteratively optimize the circuit parameters to find the minimum energy configuration.
                 <br> I confirmed this prediction using Qiskit VQE algorithms and the IBM Cloud Platform for access to simulated noiseless and noisy quantum computers, as well as IBM's quantum computer in Kyoto. The simulated results nicely demonstrate the expect umbrella inversion with its symmetric dual minima, while the real quantum computer results were expected due to issues with NISQ quantum computers.
                 </p>
-                <div class="button-container">
-                <a
-                href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
-                class="button"
-                target="_blank"
-                >
-                Read the Write Up
-                </a>
-                <a
-                href="https://github.com/levgru/lg_nh3_vqe_project/"
-                class="button"
-                target="_blank"
-                >
-                View Code on GitHub
-                </a>
-            </div>
-            <div>
-              <img src="projects/nh3_sdmp/example_plot.png" alt="More Project Shots" class="modal-image" />
-              <img src="projects/nh3_sdmp/ibm_kyoto.png" alt="More Project Shots" class="modal-image" />
-            </div>
+
+                <!-- Buttons left-aligned with text -->
+                <div class="button-container" style="justify-content: flex-start;">
+                  <a
+                    href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
+                    class="button"
+                    target="_blank"
+                  >
+                    Read the Write Up
+                  </a>
+                  <a
+                    href="https://github.com/levgru/lg_nh3_vqe_project/"
+                    class="button"
+                    target="_blank"
+                  >
+                    View Code on GitHub
+                  </a>
+                </div>
+
+                <!-- Two images side by side, total 75% width, centered -->
+                <div class="two-image-row-75">
+                  <img src="projects/nh3_sdmp/example_plot.png" alt="More Project Shots" class="modal-image half-img" />
+                  <img src="projects/nh3_sdmp/ibm_kyoto.png" alt="More Project Shots" class="modal-image half-img" />
+                </div>
             </div>
           </div>
         </div>

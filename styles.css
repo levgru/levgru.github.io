@@ -593,6 +593,53 @@ p {
     margin-left: 0; /* no forced left margin */
   }
 
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.pdf-75 {
+    width: 75% !important;
+    max-width: 75% !important;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+.single-image-row {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+  .single-image-75 {
+    width: 75% !important;
+    max-width: 75% !important;
+    display: block;
+    margin: 0 auto;
+}
+
+.two-image-row-75 {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 1rem auto; /* center the row */
+    gap: 1rem; /* small space between images */
+}
+  .two-image-row-75 .half-img {
+    width: 48%;
+    max-width: 48%;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+}
+  
+.button-container[style*="justify-content: flex-start;"] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 /* Container that holds the form */
 .contact-form-container {
   max-width: 600px;
