@@ -233,6 +233,10 @@
     margin-bottom: 1rem;
   }
   
+  .intro {
+    margin-bottom: 1rem;
+  }
+  
   /* Mobile-only profile */
   .mobile-profile {
     display: none;
