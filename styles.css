@@ -532,7 +532,7 @@ p {
     border-radius: 8px;
     max-width: 1200px;
     width: 90%;
-    max-height: 80vh;
+    max-height: none;
     overflow-y: auto; /* scroll if content is tall */
     padding: 1.5rem;
     position: relative;
@@ -613,7 +613,7 @@ p {
     justify-content: center;
     margin: 1rem 0;
 }
-  .single-image-75 {
+.single-image-75 {
     width: 75% !important;
     max-width: 75% !important;
     display: block;
@@ -783,4 +783,103 @@ p {
   display: none;
 }
 
-
+/* ============================
+   1) Reduced spacing between text, buttons, images
+   We'll set about 0.5rem (~8px) vertically
+============================ */
+.button-container[style*="justify-content: flex-start;"] {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .modal-content p {
+    margin-bottom: 0.5rem; /* reduce space under text paragraphs in overlay */
+  }
+  .single-image-row,
+  .pdf-container {
+    margin: 0.5rem 0; /* less vertical gap */
+  }
+  
+  /* ============================
+     2) Desktop: 85% widths for single images, two images, PDF
+     (Then we override them on mobile to 95%.)
+  ============================ */
+  
+  /* PDF container for desktop: 85% width, centered */
+  .pdf-85 {
+    width: 85% !important;
+    max-width: 85% !important;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+  }
+  
+  /* Single image at 85% width, centered */
+  .single-image-85 {
+    width: 85% !important;
+    max-width: 85% !important;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Two images side by side, total 85% for container */
+  .two-image-row-85 {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0.5rem auto; /* center horizontally, less vertical gap */
+    gap: 0.5rem; /* small space between images */
+  }
+  
+  /* Each image half of 85%, minus gap */
+  .two-image-row-85 .half-img {
+    width: 48%;
+    max-width: 48%;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+    margin-bottom: 0.5rem; /* small spacing under images if more content below */
+  }
+  
+  /* 
+     If you previously had max-height constraints, remove or set them to 'none'
+     so images can be taller if needed.
+     e.g.: 
+     .card-image img {
+       max-height: none;
+     }
+  */
+  
+  /* ============================
+     3) MOBILE OVERRIDES
+     At screen <=768px:
+     - PDF should be 95%
+     - Single images 95%
+     - Two images stack vertically (95% each)
+  ============================ */
+  @media (max-width: 768px) {
+  
+    /* PDF at 95% on mobile */
+    .pdf-85 {
+      width: 95% !important;
+      max-width: 95% !important;
+    }
+  
+    /* Single images 95% on mobile */
+    .single-image-85 {
+      width: 95% !important;
+      max-width: 95% !important;
+    }
+  
+    /* Two images stacked (one per line) at 95% width each */
+    .two-image-row-85 {
+      flex-direction: column;
+      width: 95%;
+      gap: 0.5rem;
+    }
+    .two-image-row-85 .half-img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
