@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>My Portfolio</title>
-    <!-- Serif for headers, Inter for body -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -71,7 +70,7 @@
         <h2 class="section-heading">Research</h2>
         <ul>
           <li>
-            <div class="collapsible" onclick="toggleProject(this)">
+            <div class="collapsible">
               <span class="project-title">
                 Quantum Optics Group, <b>Harvey Mudd College Spring 2024 - Present</b>
               </span>
@@ -94,7 +93,7 @@
             </div>
           </li>
           <li>
-            <div class="collapsible" onclick="toggleProject(this)">
+            <div class="collapsible">
               <span class="project-title">
                 Quantum Materials and Nanodevice Laboratory,
                 <b>San Francisco State University Summer 2023</b>
@@ -138,7 +137,7 @@
         <h2 class="section-heading">Projects</h2>
         <ul>
             <li>
-                <div class="collapsible" onclick="toggleProject(this)">
+                <div class="collapsible">
                     <span class="project-title">
                     Modeling Bio-Materials to Second Order
                     <b>Fall 2024</b>
@@ -178,7 +177,7 @@
                 </div>
             </li>
             <li>
-                <div class="collapsible" onclick="toggleProject(this)">
+                <div class="collapsible">
                 <span class="project-title">
                     Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers,
                     <b>Spring 2024</b>
@@ -232,7 +231,7 @@
                 </div>
             </li>
             <li>
-              <div class="collapsible" onclick="toggleProject(this)">
+              <div class="collapsible">
               <span class="project-title">
                 A Physical and Chemical Simulation for Estimating Long-Term Stair Wear (COMAP MCM 2025),
                   <b>Jan 23-27, 2025</b>
@@ -279,18 +278,32 @@
     <p>&copy; 2025 Lev Gruber</p>
   </footer>
   <script>
-    // Toggles the collapsible research/projects sections
-    function toggleProject(element) {
-      const content = element.nextElementSibling;
-      const icon = element.querySelector(".toggle-icon");
-      if (content.style.display === "block") {
-        content.style.display = "none";
-        icon.style.transform = "rotate(0deg)";
-      } else {
-        content.style.display = "block";
-        icon.style.transform = "rotate(180deg)";
-      }
-    }
+    // Collapsible logic (works for multiple, no class confusion)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.collapsible').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          const isOpen = trigger.classList.contains('open');
+          // Close all
+          document.querySelectorAll('.collapsible').forEach(c => c.classList.remove('open'));
+          document.querySelectorAll('.project-content').forEach(pc => pc.style.maxHeight = null);
+          // Open this one if it wasn't open
+          if (!isOpen) {
+            trigger.classList.add('open');
+            const content = trigger.nextElementSibling;
+            if(content) {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          }
+        });
+      });
+      // Optional: Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('collapsible') && !e.target.closest('.collapsible')) {
+          document.querySelectorAll('.collapsible').forEach(c => c.classList.remove('open'));
+          document.querySelectorAll('.project-content').forEach(pc => pc.style.maxHeight = null);
+        }
+      });
+    });
   </script>
 </body>
 </html>
