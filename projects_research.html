@@ -278,7 +278,7 @@
                 <p>
                   We modeled polymeric materials using a non-linear correction term to Hooke's Law, simulating a biological system; see the figure at right. We evaluated the associated non-analytically solvable equations of motion while varying spring constants, masses, and initial conditions. Click <i>Read More</i> for more detail, interesting plots, and a link to our write up.
                 </p>
-                <button class="details-btn" onclick="openModal('modal3')">
+                <button class="details-btn" onclick="openModal('modal5')">
                   Read More
                 </button>
               </div>
@@ -289,9 +289,9 @@
           </div>
 
           <!-- Modal #3 -->
-          <div class="modal-overlay" id="modal3">
+          <div class="modal-overlay" id="modal5">
             <div class="modal-content">
-              <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+              <button class="modal-close" onclick="closeModal('modal5')">&times;</button>
               <h3>Modeling Bio-Materials to Second Order</h3>
               <p>
                 Polymeric materials are biological materials in which repeated microscopic units lead to interesting macroscopic properties. These materials often have different moderate and high strain limits than those expected for linear Hooke's Law systems, meaning a non-linear relationship between the spring's restorative force to its displacement, characterized by different regimes dependent on the tension applied. In the moderate displacement regime, a material yields and is easier to stretch than low displacement, and in the large displacement regime the limiting factor becomes how much individual monomers can stretch. For my classmate Charlie Schofield's and my Theoretical Mechanics course computational project, we modeled these two regimes using a non-linear correction term to Hooke's Law. <br><br> We used Python and Mathematica to solve the non-analytically solvable equations of motion for this system, creating position vs. time, velocity vs. position, and Poincare maps (also known as surfaces of section) to view dynamic behavior. To find equations of motion, we solved the Lagrangian and Euler-Lagrange equations by hand then used the solve_ivp function from SciPy to solve the differential equations. Plotting used Matplotlib, and all code is contained in a commented Jupyter notebook! See below for some sample plots and read the write up for more information.
