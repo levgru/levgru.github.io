@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -12,20 +19,47 @@
     <link rel="manifest" href="images/favicon/site.webmanifest">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="header-content">
+      <!-- Hamburger (mobile only) -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+
+      <!-- Desktop Nav (hidden on mobile) -->
       <nav id="navbar">
         <a href="index.html">Home</a>
-        <a href="projects_research.html">Research & Projects</a>
+        <a href="projects_research.html">Research &amp; Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
+
+  <!-- POPUP MENU (MOBILE ONLY) -->
+  <div id="popoutMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects_research.html">Research &amp; Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN LAYOUT -->
   <div class="layout">
+    <!-- SIDEBAR (Desktop) -->
     <aside class="sidebar">
+      <!-- Desktop: circular container -->
       <div class="desktop-picture-container">
-        <img src="images/headshot.jpg" alt="Profile Picture" class="desktop-profile-pic" />
+        <img
+          src="images/headshot.jpg"
+          alt="Profile Picture"
+          class="desktop-profile-pic"
+        />
       </div>
+
       <h2>Lev Gruber</h2>
       <p>
         4th year undergraduate at Harvey Mudd College,<br />
@@ -35,24 +69,58 @@
       <ul>
         <li>
           <a href="https://github.com/levgru" target="_blank">
-            <img src="images/github_logo.png" alt="GitHub" class="icon" /> GitHub
+            <img src="images/github_logo.png" alt="GitHub" class="icon" />
+            GitHub
           </a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/levgruber" target="_blank">
-            <img src="images/linkedin_logo.png" alt="LinkedIn" class="icon" /> LinkedIn
+            <img
+              src="images/linkedin_logo.png"
+              alt="LinkedIn"
+              class="icon"
+            />
+            LinkedIn
           </a>
         </li>
         <li>
           <a href="mailto:lgruber@hmc.edu">
-            <img src="images/email_logo.png" alt="Email" class="icon" /> Email
+            <img src="images/email_logo.png" alt="Email" class="icon" />
+            Email
           </a>
         </li>
       </ul>
     </aside>
+
+    <!-- MAIN CONTENT -->
     <main>
+      <!-- MOBILE-ONLY PROFILE (Hidden on Desktop) -->
+      <section class="mobile-profile">
+        <!-- Circular Blue Outline Container -->
+        <div class="mobile-picture-container">
+          <img
+            src="images/headshot.jpg"
+            alt="Profile Picture"
+            class="mobile-profile-pic"
+          />
+        </div>
+
+        <!-- Three icons only, side by side -->
+        <div class="mobile-icons">
+          <a href="https://github.com/levgru" target="_blank">
+            <img src="images/github_logo.png" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+            <img src="images/linkedin_logo.png" alt="LinkedIn" />
+          </a>
+          <a href="mailto:lgruber@hmc.edu">
+            <img src="images/email_logo.png" alt="Email" />
+          </a>
+        </div>
+      </section>
+
+      <!-- Intro -->
       <section class="intro">
-        <span class="section-number">00.</span>
         <h1>Hi!</h1>
         <p>
           I’m Lev, a 4th-year physics and mathematics undergraduate student
@@ -64,18 +132,19 @@
           or using the Contact page.
         </p>
       </section>
-      <hr />
-      <section>
-        <span class="section-number">01.</span>
-        <h2 class="section-heading">Research</h2>
+
+      <!-- Research Section -->
+      <section class="projects">
+        <h2>Research</h2>
         <ul>
           <li>
-            <div class="collapsible">
+            <div class="collapsible" onclick="toggleProject(this)">
               <span class="project-title">
                 Quantum Optics Group, <b>Harvey Mudd College Spring 2024 - Present</b>
               </span>
               <span class="toggle-icon">+</span>
             </div>
+            <!-- Hidden content container -->
             <div class="project-content">
               <p>
                 The HMC Quantum Optics group (or Lynn Lab), led by Professor
@@ -93,13 +162,14 @@
             </div>
           </li>
           <li>
-            <div class="collapsible">
+            <div class="collapsible" onclick="toggleProject(this)">
               <span class="project-title">
                 Quantum Materials and Nanodevice Laboratory,
                 <b>San Francisco State University Summer 2023</b>
               </span>
               <span class="toggle-icon">+</span>
             </div>
+            <!-- Hidden content container -->
             <div class="project-content">
               <p>
                 The Quantum Materials Lab was led by the late Professor
@@ -115,10 +185,10 @@
           </li>
         </ul>
       </section>
-      <hr />
-      <section>
-        <span class="section-number">02.</span>
-        <h2 class="section-heading">Publications & Presentations</h2>
+
+      <!-- Publications / Presentations Section -->
+    <section class="projects">
+        <h2>Publications &amp; Presentations</h2>
         <ul class="pub-list">
           <li>
             <strong>L. Gruber</strong>, S. Kerr, E. Hernandez, P. Navarro, T. W. Lynn<br>
@@ -131,19 +201,21 @@
           </li>
         </ul>
       </section>
-      <hr />
-      <section>
-        <span class="section-number">03.</span>
-        <h2 class="section-heading">Projects</h2>
+
+  <section class="projects">
+      <!-- Projects Section -->
+      <section class="projects">
+        <h2>Projects</h2>
         <ul>
             <li>
-                <div class="collapsible">
+                <div class="collapsible" onclick="toggleProject(this)">
                     <span class="project-title">
                     Modeling Bio-Materials to Second Order
                     <b>Fall 2024</b>
                     </span>
                     <span class="toggle-icon">+</span>
                 </div>
+                <!-- Hidden content container -->
                 <div class="project-content">
                     <p>
                     Material properties of a spring determine the proportionality between its restorative force and displacement. In the large strain limit, certain biological materials behave with growing stiffness; collaborator Charlie Schofield and I approximated this behavior using a second order correction term to Hooke's law. We then simulated a simplified biological system by putting massless, non-linear springs in series in between masses representing joints. Using Python and Mathematica, we evaluated the non-analytically solvable equations of motion to view chaotic behavior while varying spring constants, masses, and initial conditions. See the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page for more details, or read the write up/code below.
@@ -177,13 +249,14 @@
                 </div>
             </li>
             <li>
-                <div class="collapsible">
+                <div class="collapsible" onclick="toggleProject(this)">
                 <span class="project-title">
                     Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers,
                     <b>Spring 2024</b>
                 </span>
                 <span class="toggle-icon">+</span>
                 </div>
+                <!-- Hidden content container -->
                 <div class="project-content">
                 <p>
                     Variational quantum eigensolvers (VQEs) are a type of algorithm
@@ -231,13 +304,14 @@
                 </div>
             </li>
             <li>
-              <div class="collapsible">
+              <div class="collapsible" onclick="toggleProject(this)">
               <span class="project-title">
                 A Physical and Chemical Simulation for Estimating Long-Term Stair Wear (COMAP MCM 2025),
                   <b>Jan 23-27, 2025</b>
               </span>
               <span class="toggle-icon">+</span>
               </div>
+              <!-- Hidden content container -->
               <div class="project-content">
               <p>
                 The COMAP Mathematical Contest in Modeling (MCM) is a four day competition in which teams of three model a real world problem and write a paper on their work. For the 2025 contest, we built a physical and chemical simulation to model stair wear over time, providing archaeologists analyzing a historical set of stairs the tools to learn about the stair's traffic patterns. For force (human steps over time) we used a 2D Generalized Maxwell Model, and for chemical erosion from precipitation a set of linear polynomials fit from a Gaussian Mixture Model. See the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page or links below for more info!
@@ -274,36 +348,38 @@
       </section>
     </main>
   </div>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Lev Gruber</p>
   </footer>
+
+  <!-- JavaScript -->
   <script>
-    // Collapsible logic (works for multiple, no class confusion)
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.collapsible').forEach(function(trigger) {
-        trigger.addEventListener('click', function() {
-          const isOpen = trigger.classList.contains('open');
-          // Close all
-          document.querySelectorAll('.collapsible').forEach(c => c.classList.remove('open'));
-          document.querySelectorAll('.project-content').forEach(pc => pc.style.maxHeight = null);
-          // Open this one if it wasn't open
-          if (!isOpen) {
-            trigger.classList.add('open');
-            const content = trigger.nextElementSibling;
-            if(content) {
-              content.style.maxHeight = content.scrollHeight + "px";
-            }
-          }
-        });
-      });
-      // Optional: Close on outside click
-      document.addEventListener('click', function(e) {
-        if (!e.target.classList.contains('collapsible') && !e.target.closest('.collapsible')) {
-          document.querySelectorAll('.collapsible').forEach(c => c.classList.remove('open'));
-          document.querySelectorAll('.project-content').forEach(pc => pc.style.maxHeight = null);
-        }
-      });
-    });
+    // Toggles the collapsible research/projects sections
+    function toggleProject(element) {
+      const content = element.nextElementSibling;
+      const icon = element.querySelector(".toggle-icon");
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        content.style.display = "block";
+        icon.style.transform = "rotate(180deg)";
+      }
+    }
+
+    // Toggles the hamburger menu + the popout
+    function toggleMenu() {
+      const hamburger = document.querySelector(".hamburger");
+      const popoutMenu = document.getElementById("popoutMenu");
+
+      // Toggle the .open class on the hamburger to morph into a triangle
+      hamburger.classList.toggle("open");
+
+      // Toggle the popout menu's .show class
+      popoutMenu.classList.toggle("show");
+    }
   </script>
 </body>
 </html>
