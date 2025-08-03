@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research &amp; Projects</title>
+
+  <!-- Link to your existing CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="header-content">
+      <!-- Hamburger icon (mobile only) -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="projects_research.html">Research &amp; Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- POPUP MENU (MOBILE) -->
+  <div id="popoutMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects_research.htm;">Research &amp; Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="desktop-picture-container">
+      <img
+        src="images/headshot.jpg"
+        alt="Profile Picture"
+        class="desktop-profile-pic"
+      />
+    </div>
+
+    <h2>Lev Gruber</h2>
+    <p>
+      3rd year undergraduate at Harvey Mudd College<br />
+      Researcher in HMC Quantum Optics Group
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/levgru" target="_blank">
+          <img src="images/github_logo.png" alt="GitHub" class="icon" />
+          GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+          <img
+            src="images/linkedin_logo.png"
+            alt="LinkedIn"
+            class="icon"
+          />
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:lgruber@hmc.edu">
+          <img src="images/email_logo.png" alt="Email" class="icon" />
+          Email
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <div class="layout">
+    <!-- Shift content right to accommodate sidebar -->
+    <main>
+      <div class="container">
+        <h1 style="text-align:center;">Research and Projects</h1>
+        
+        <!-- RESEARCH SECTION HEADING -->
+        <h2 class="section-heading">Research</h2>
+        <div class="timeline">
+          <!-- TIMELINE ITEM #1 (Quantum Optics) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Quantum Optics Group</h3>
+                <span class="role-dates"><b>Harvey Mudd College</b>, Spring 2024 – Present, Collaboration: Professor Theresa Lynn (PI), Paco Navarro (HMC '25), Stuart Kerr (HMC '26)</span>
+                <p>
+                  The Harvey Mudd Quantum Optics group studies entanglement witnesses and exchange-symmetry in quantum computing. Click <i>Read More</i> for more info and a link to my 2025 APS March Meeting poster on this research!
+                </p>
+                <button class="details-btn" onclick="openModal('modal1')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="research/qo_group/group_pic.jpg" alt="Plot or Lab Image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #1 -->
+          <div class="modal-overlay" id="modal1">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+              <h3>Quantum Optics Group, <b>Harvey Mudd College</b></h3>
+              <p>
+                Quantum cryptography utilizes quantum entanglement to secure data against the threat of quantum computing. Detecting entanglement is necessary for secure and efficient long-distance quantum communication. Entanglement witnessing is an efficient method of detecting entanglement locally without requiring a full tomography, which minimizes the number of measurements required compared to traditional methods. <br><br>
+                As part of the group since spring 2024, I've contributed to experimental demonstrations of a two-step process for detecting entanglement in unknown two-photon states, working directly with the optics apparatus and using data analysis via Python. This includes gathering results from our linear optical apparatus by determining wave plate angles, coding in Python to have the wave plates sweep those angles, and taking coincidence count data of different entangled states in various bases up to a full tomography, as well as analyzing the data by building density matrices and corresponding entanglement witnesses via projective probabilities and Stoke's parameters. This summer we fixed our optimization routine for entanglement witness minimization (dual gradient descent), gathered data on specific entangled states we expected to show success of the two-step witnessing process, and began writing a manuscript for the project. See below for the poster I (and collaborator Stuart Kerr) presented at the 2025 APS March Meeting conference.  <br><br>
+                Currently, I am working with Professor Lynn on developing novel applications of exchange symmetry in qudit quantum computing. Exchange symmetry implies a systematic invariance to swapping qudits (d-dimension qubits) within a quantum computer and has been shown experimentally to increase qubit coherence times. The increased information density of qudit systems combined with high coherence times in a symmetry-protected subspace will significantly advance the field of quantum computing, and we are working on actualizing this goal.
+              </p>
+              <!-- PDF embed at 95% wide -->
+              <div class="pdf-container">
+                <embed
+                  src="research/qo_group/2025_APS_experimental_poster.pdf"
+                  type="application/pdf"
+                  class="modal-pdf pdf-95"
+                  height="600px"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- TIMELINE ITEM #2 (Quantum Materials) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Quantum Materials and Nanodevice Laboratory</h3>
+                <span class="role-dates"><b>San Francisco State University</b>, Summer 2023</span>
+                <p>
+                  The Quantum Materials and Nanodevice Laboratory focuses on the properties of two-dimensional materials and their applications towards nanodevices. Click <i>Read More</i> for more info about my work with the group and some cool plots!
+                </p>
+                <button class="details-btn" onclick="openModal('modal2')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="research/mos2/mos2_ambient.png" alt="Plot or Lab Image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #2 -->
+          <div class="modal-overlay" id="modal2">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+              <h3>Quantum Materials and Nanodevice Laboratory, <b>San Francisco State University</b></h3>
+              <p>
+                Two-dimensional and zero-dimensional materials are undoubtedly useful for applications in efficient solar cells and biomedical devices. The Quantum Materials and Nanodevice Laboratory investigates the properties of materials as thick as one or two atoms, including graphene, MoS<sub>2</sub>, MoSe<sub>2</sub>, WS<sub>2</sub>, and WSe<sub>2</sub>. <br><br>
+                During Summer 2023, I worked to replicate a sensitivity to substrate preparation seen in monolayer (1 atom thick) MoS<sub>2</sub> samples seen in previous literature. To do so I exfoliated samples using the scotch tape method, found monolayers using a microscope, determined their Raman peaks using a Raman spectrometer, and analyzed and curve fit data using Python. The process of creating an ultra-smooth gold substrate surface, onto which we placed MoS<sub>2</sub> samples, was notable due to it affecting the Raman peaks of the samples: Raman spectrums for glove box-prepared samples showed unique features such as a 'baby bump' on the E peak and splitting of the A mode, absent in ambient-prepared samples. These differences provide insights into environmental effects on monolayer properties, relevant for device fabrication. We believe these differences to stem from oxygen bonding with the gold substrate when prepared in ambient conditions. See the figures below for differences in Raman peaks and example samples.
+              </p>
+              <!-- Single image at 95% on mobile, 95% on desktop as well if you prefer -->
+              <div class="single-image-row">
+                <img src="research/mos2/overall_plot_comparison_mos2.png" alt="Full Plot" class="modal-image single-image-95" />
+              </div>
+              <div class="single-image-row">
+                <img src="research/mos2/E_peak.png" alt="Full Plot" class="modal-image single-image-95" />
+              </div>
+              <div class="single-image-row">
+                <img src="research/mos2/A_peak.png" alt="Full Plot" class="modal-image single-image-95" />
+              </div>
+              <div class="two-image-row-95">
+                <img src="research/mos2/sample.png" alt="More Project Shots" class="modal-image half-img" />
+                <img src="research/mos2/exfoliation.png" alt="More Project Shots" class="modal-image half-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECTS SECTION HEADING -->
+        <h2 class="section-heading">Projects</h2>
+        <div class="timeline">
+          <!-- TIMELINE ITEM COMPAP -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3> A Physical and Chemical Simulation for Estimating Long-Term Stair Wear (COMAP MCM 2025) </h3>
+                <span class="role-dates">Jan 23-27, 2025, Collaboration: Edward Donson, Charlie Schofield</span>
+                <p>
+                  For the 2025 COMAP Mathematical Contest in Modeling (MCM), we developed a way for archeologists to determine various characteristics of historical stairs. This model utilized a 2D Generalized Maxwell Model for divot generation from repeated human steps, and a Gaussian Mixture Model to estimate chemical precipitation from erosion. Click <i>Read More</i> to see our paper and some pretty flow charts!
+                </p>
+                <button class="details-btn" onclick="openModal('modal3')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="projects/mcm_2025/GeneralizedMaxwell.png" alt="Project Screenshot" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #3 -->
+          <div class="modal-overlay" id="modal3">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+              <h3>A Physical and Chemical Simulation for Estimating Long-Term Stair Wear (COMAP MCM 2025)</h3>
+              <p>
+                In order to better understand the cultural significance of manmade landmarks it is useful to
+                study their surrounding features. In particular, the wear and estimated age of staircases can
+                provide useful information for an archaeologist studying a landmark, including landmark usage,
+                travel patterns around the landmark, and even features such as the flow of visitors in and out of the
+                landmark. To properly model staircase wear, traffic, and age, we employed a Generalized Maxwell
+                Model to simulate human-step traffic up and down a staircase, and a set of Linear Polynomials
+                in a chemical erosion model to determine yearly erosion of specific sedimentary and metamorphic
+                rocks that make up a majority of historic staircases. <br><br>
+                Our Generalized Maxwell Model takes a random force generated from a dataset of footstep
+                samples and applies the force to a 2D set of lattice points which are vertically connected by a
+                series of springs and dampers. The movement of these lattice points is then simulated over a second
+                to produce a physically accurate response to the compression a stone stair would experience upon
+                being stepped on. This model of a single step is then propagated over hours, days, and years to
+                model the cumulative wear on a stair caused by human steps over time. The human step force is
+                able to be applied on different sections of a stair and with various forces to simulate and match
+                on-site measurements of the stair by an archaeologist.<br><br>
+                Our Linear Polynomials take inputs of stone type, sedimentary or metamorphic. Other
+                parameters are generated using Gaussian Mixture Modeling by taking existing precipitation
+                and atmospheric data from a similar region and approximating the amount of yearly precipitation
+                and concentration of pollutants. This combination of probabilistic and staircase-specific parameters
+                predicts the rate of erosion of a stone staircase as a result of acidic rain and reaction of chemicals
+                in the stone with chemicals from the rain or atmosphere.
+              </p>
+
+              <!-- Buttons left-aligned -->
+              <div class="button-container" style="justify-content: flex-start;">
+                <a
+                  href="https://github.com/edonson2016/MCM2025CEL/blob/main/2528481.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  Read the Write Up
+                </a>
+                <a
+                  href="https://github.com/edonson2016/MCM2025CEL"
+                  class="button"
+                  target="_blank"
+                >
+                  View Code on GitHub
+                </a>
+              </div>
+
+              <!-- Two images side by side on desktop, stacked on mobile, 95% wide or so -->
+              <div class="two-image-row-95">
+                <img src="projects/mcm_2025/Erosion Flow.png" alt="More Project Shots" class="modal-image half-img" />
+                <img src="projects/mcm_2025/1d_compression.png" alt="More Project Shots" class="modal-image half-img" />
+              </div>
+              <div class="two-image-row-95">
+                <img src="projects/mcm_2025/hno3_pdf.png" alt="More Project Shots" class="modal-image half-img" />
+                <img src="projects/mcm_2025/monthly_precip_pdf.png" alt="More Project Shots" class="modal-image half-img" />
+              </div>
+              <div class="single-image-row">
+                <img src="projects/mcm_2025/GMM Flow.png" alt="Full Plot" class="modal-image single-image-95" />
+              </div>
+              <div class="single-image-row">
+                <img src="projects/mcm_2025/Module Flowchart.png" alt="Full Plot" class="modal-image single-image-95" />
+              </div>
+            </div>
+          </div>
+
+
+          <!-- TIMELINE ITEM #3 (Modeling Bio Materials) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Modeling Bio-Materials to Second Order</h3>
+                <span class="role-dates">Fall 2024, Collaboration: Charlie Schofield</span>
+                <p>
+                  We modeled polymeric materials using a non-linear correction term to Hooke's Law, simulating a biological system; see the figure at right. We evaluated the associated non-analytically solvable equations of motion while varying spring constants, masses, and initial conditions. Click <i>Read More</i> for more detail, interesting plots, and a link to our write up.
+                </p>
+                <button class="details-btn" onclick="openModal('modal5')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <img src="projects/biological_springs/system.png" alt="Project Screenshot" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #3 -->
+          <div class="modal-overlay" id="modal5">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal5')">&times;</button>
+              <h3>Modeling Bio-Materials to Second Order</h3>
+              <p>
+                Polymeric materials are biological materials in which repeated microscopic units lead to interesting macroscopic properties. These materials often have different moderate and high strain limits than those expected for linear Hooke's Law systems, meaning a non-linear relationship between the spring's restorative force to its displacement, characterized by different regimes dependent on the tension applied. In the moderate displacement regime, a material yields and is easier to stretch than low displacement, and in the large displacement regime the limiting factor becomes how much individual monomers can stretch. For my classmate Charlie Schofield's and my Theoretical Mechanics course computational project, we modeled these two regimes using a non-linear correction term to Hooke's Law. <br><br> We used Python and Mathematica to solve the non-analytically solvable equations of motion for this system, creating position vs. time, velocity vs. position, and Poincare maps (also known as surfaces of section) to view dynamic behavior. To find equations of motion, we solved the Lagrangian and Euler-Lagrange equations by hand then used the solve_ivp function from SciPy to solve the differential equations. Plotting used Matplotlib, and all code is contained in a commented Jupyter notebook! See below for some sample plots and read the write up for more information.
+              </p>
+
+              <!-- Buttons left-aligned -->
+              <div class="button-container" style="justify-content: flex-start;">
+                <a
+                  href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  Read the Write Up
+                </a>
+                <a
+                  href="https://github.com/levgru/phys111_gruber_schofield/"
+                  class="button"
+                  target="_blank"
+                >
+                  View Code on GitHub
+                </a>
+              </div>
+
+              <!-- Two images side by side on desktop, stacked on mobile, 95% wide or so -->
+              <div class="two-image-row-95">
+                <img src="projects/biological_springs/varying_springs_equal_mass.png" alt="More Project Shots" class="modal-image half-img" />
+                <img src="projects/biological_springs/varying_springs_nonequal_mass.png" alt="More Project Shots" class="modal-image half-img" />
+              </div>
+              <div class="two-image-row-95">
+                <img src="projects/biological_springs/sos_4ICs.png" alt="More Project Shots" class="modal-image half-img" />
+                <img src="projects/biological_springs/sos_4ICs_nonequal_mass.png" alt="More Project Shots" class="modal-image half-img" />
+              </div>
+            </div>
+          </div>
+
+          <!-- TIMELINE ITEM #4 (Ammonia SDMP) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card">
+              <div class="card-text">
+                <h3>Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers</h3>
+                <span class="role-dates">Spring 2024</span>
+                <p>
+                  Variational quantum eigensolvers are a class of quantum algorithms (i.e. for a quantum computer) used for quantum chemistry and optimization problems. Using Qiskit and the IBM Cloud Platform I solved for the ground state energy of NH<sub>3</sub> and H<sub>2</sub> (see umbrella inversion at right) on simulated and real quantum computers. Click <i>Read More</i> for cool figures and a link to the Github with all code, figures, and a write up. 
+                </p>
+                <button class="details-btn" onclick="openModal('modal4')">
+                  Read More
+                </button>
+              </div>
+              <div class="card-image">
+                <div class="card-image"></div>
+                  <img src="projects/nh3_sdmp/nh3_h2_cite.png" alt="Project Screenshot" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal #4 -->
+          <div class="modal-overlay" id="modal4">
+            <div class="modal-content">
+              <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
+              <h3>Demonstration Ammonia SDMP via Variational Quantum Eigensolvers</h3>
+              <p>
+                The nitrogen atom in ammonia (NH<sub>3</sub>) is able to tunnel through the plane formed by the three hydrogen atoms, a phenomenon known as umbrella inversion. This quantum mechanical effect is a classic example of tunneling, where the nitrogen atom moves between two equivalent configurations. We expect the corresponding plot of energy versus nitrogen position from the planar hydrogens to have a symmetric dual minima potential (SDMP). Using variational quantum eigensolvers (VQEs), we can simulate this process and calculate the ground state energy of the molecule at various distances. VQEs are powerful quantum algorithms that map a problem's Hamiltonian to a variational quantum circuit, calculate the energy, and iteratively optimize the circuit parameters to find the minimum energy configuration.
+                <br><br> I confirmed this prediction using Qiskit VQE algorithms and the IBM Cloud Platform for access to simulated noiseless and noisy quantum computers, as well as IBM's quantum computer in Kyoto. To ensure the ammonia calculations were tractable, I defined the complete active space (CAS) over which the VQE was run to have 2 electrons and 2 spatial orbitals, therefore assuming most ground state energy contributions come from this CAS. I then defined the problem using PySCF with geometries calculated by hand, used a Jordan Wigner mapper via Qiskit to map it onto a quantum circuit, and used the UCCSD method defined with Hartree-Fock as the initial guess. This was run both locally using a Qiskit backend (Aer) and on the cloud (ibmq_qasm_simulator, now depreciated) and the IBM Kyoto quantum computer using IBM Runtime with 1000 shots. The biggest hurdle was that IBM had recently released Qiskit 1.0, changing almost all of the dependencies needed and making it much harder to find documentation; this was resolved by lots of time spent reading the functions to understand their uses and implementing the algorithm. Despite this, the simulated results nicely demonstrate the expected umbrella inversion with its symmetric dual minima, while the real quantum computer results were expected due to known issues with NISQ quantum computers.
+              </p>
+
+              <!-- Buttons left-aligned -->
+              <div class="button-container" style="justify-content: flex-start;">
+                <a
+                  href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
+                  class="button"
+                  target="_blank"
+                >
+                  Read the Write Up
+                </a>
+                <a
+                  href="https://github.com/levgru/lg_nh3_vqe_project/"
+                  class="button"
+                  target="_blank"
+                >
+                  View Code on GitHub
+                </a>
+              </div>
+
+              <!-- Two images side by side on desktop, stacked on mobile -->
+              <div class="single-image-row">
+                <img src="projects/nh3_sdmp/example_plot.png" alt="Full Plot" class="modal-image single-image-95" />
+              </div>
+              <div class="two-image-row-95">
+                <img src="projects/nh3_sdmp/hydrogen_sim.png" alt="More Project Shots" class="modal-image half-img" />
+                <img src="projects/nh3_sdmp/ibm_kyoto.png" alt="More Project Shots" class="modal-image half-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Lev Gruber</p>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Hamburger toggles
+    function toggleMenu() {
+      const hamburger = document.querySelector(".hamburger");
+      const popoutMenu = document.getElementById("popoutMenu");
+      hamburger.classList.toggle("open");
+      popoutMenu.classList.toggle("show");
+    }
+
+    // Modal open/close
+    function openModal(modalId) {
+      const overlay = document.getElementById(modalId);
+      if (overlay) {
+        overlay.classList.add('active');
+      }
+    }
+    function closeModal(modalId) {
+      const overlay = document.getElementById(modalId);
+      if (overlay) {
+        overlay.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
