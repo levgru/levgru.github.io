@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lev Gruber | Physics Ph.D. Student</title>
+  <meta name="description" content="Lev Gruber is a physics Ph.D. student at Boston College working at the intersection of quantum sensing and quantum many-body theory." />
 
-    <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-    />
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/site.webmanifest">
+  <!-- Styles + tab icons -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="images/favicon/site.webmanifest" />
 </head>
 <body>
-  <!-- HEADER -->
+
+  <!-- ============ HEADER ============ -->
   <header>
     <div class="header-content">
       <!-- Hamburger (mobile only) -->
-      <div class="hamburger" onclick="toggleMenu()">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
-      </div>
+      <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="popoutMenu">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
 
-      <!-- Desktop Nav (hidden on mobile) -->
+      <!-- Desktop nav -->
       <nav id="navbar">
-        <a href="index.html">Home</a>
-        <a href="projects_research.html">Research &amp; Projects</a>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#publications">Publications</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -43,344 +44,226 @@
   <div id="popoutMenu">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="projects_research.html">Research &amp; Projects</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 
-  <!-- MAIN LAYOUT -->
+  <!-- ============ MAIN LAYOUT ============ -->
   <div class="layout">
-    <!-- SIDEBAR (Desktop) -->
+
+    <!-- SIDEBAR (desktop) -->
     <aside class="sidebar">
-      <!-- Desktop: circular container -->
       <div class="desktop-picture-container">
-        <img
-          src="images/headshot.jpg"
-          alt="Profile Picture"
-          class="desktop-profile-pic"
-        />
+        <img src="images/headshot.jpg" alt="Lev Gruber" class="desktop-profile-pic" />
       </div>
 
       <h2>Lev Gruber</h2>
       <p>
-        4th year undergraduate at Harvey Mudd College,<br />
-        Researcher in HMC Quantum Optics Group, <br />
-        Quantum memories researcher for the Quantum Moonshot
+        Physics Ph.D. student at Boston College,<br />
+        Advised by Prof. Benedetta Flebus,<br />
+        HMC '26, B.S. Mathematics &amp; Physics
       </p>
       <ul>
         <li>
-          <a href="https://github.com/levgru" target="_blank">
-            <img src="images/github_logo.png" alt="GitHub" class="icon" />
+          <a href="https://github.com/levgru" target="_blank" rel="noopener">
+            <img src="images/github_logo.png" alt="" class="icon" />
             GitHub
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/levgruber" target="_blank">
-            <img
-              src="images/linkedin_logo.png"
-              alt="LinkedIn"
-              class="icon"
-            />
+          <a href="https://www.linkedin.com/in/levgruber" target="_blank" rel="noopener">
+            <img src="images/linkedin_logo.png" alt="" class="icon" />
             LinkedIn
           </a>
         </li>
         <li>
-          <a href="mailto:lgruber@hmc.edu">
-            <img src="images/email_logo.png" alt="Email" class="icon" />
+          <a href="mailto:lev.gruber@bc.edu">
+            <img src="images/email_logo.png" alt="" class="icon" />
             Email
           </a>
         </li>
       </ul>
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- ============ MAIN CONTENT ============ -->
     <main>
-      <!-- MOBILE-ONLY PROFILE (Hidden on Desktop) -->
-      <section class="mobile-profile">
-        <!-- Circular Blue Outline Container -->
-        <div class="mobile-picture-container">
-          <img
-            src="images/headshot.jpg"
-            alt="Profile Picture"
-            class="mobile-profile-pic"
-          />
-        </div>
 
-        <!-- Three icons only, side by side -->
+      <!-- MOBILE-ONLY PROFILE (hidden on desktop) -->
+      <section class="mobile-profile">
+        <div class="mobile-picture-container">
+          <img src="images/headshot.jpg" alt="Lev Gruber" class="mobile-profile-pic" />
+        </div>
         <div class="mobile-icons">
-          <a href="https://github.com/levgru" target="_blank">
+          <a href="https://github.com/levgru" target="_blank" rel="noopener">
             <img src="images/github_logo.png" alt="GitHub" />
           </a>
-          <a href="https://www.linkedin.com/in/levgruber" target="_blank">
+          <a href="https://www.linkedin.com/in/levgruber" target="_blank" rel="noopener">
             <img src="images/linkedin_logo.png" alt="LinkedIn" />
           </a>
-          <a href="mailto:lgruber@hmc.edu">
+          <a href="mailto:lev.gruber@bc.edu">
             <img src="images/email_logo.png" alt="Email" />
           </a>
         </div>
       </section>
 
-      <!-- Intro -->
+      <!-- ============ INTRO ============ -->
       <section class="intro">
         <h1>Hi!</h1>
         <p>
-          I’m Lev, a 4th-year physics and mathematics undergraduate student
-          at Harvey Mudd College in Claremont, CA. Outside of coursework, I conduct
-          research in entanglement witnessing and quantum computing with the HMC Quantum Optics Group, research quantum field theory applications with the Quantum Moonshot project (MITRE, MIT, Sandia NL),
-          organize the HMC incoming class' orientation as an Orientation Director
-          for the HMC Residential Life Office, and start for the Claremont Colleges Men's Volleyball team.
-          I am particularly interested in quantum information theory, quantum thermodynamics, general relativity, quantum computing, and quantum gravity. Feel free to contact me via email
-          or using the Contact page.
+          I’m Lev, a physics Ph.D. student at Boston College in Professor Benedetta Flebus’s
+          group, working at the intersection of quantum sensing and quantum many-body theory.
+          I graduated from Harvey Mudd College in 2026 with a B.S. in Joint Mathematics and Physics
+          (High Distinction, Honors in Physics), where I researched adaptive entanglement
+          witnessing with Professor Theresa Lynn, and I have interned at MITRE in quantum theory
+          and integrated photonics.
+        </p>
+        <p>
+          Outside of physics, I directed HMC’s New Student Orientation, founded the HMC Simulation
+          Racing Club, and played outside hitter for the Claremont men’s club volleyball team.
+          Feel free to reach out by <a href="mailto:lev.gruber@bc.edu" class="text-link">email</a>
+          or through the <a href="contact.html" class="text-link">Contact</a> page.
         </p>
       </section>
 
-      <!-- Research Section -->
-      <section class="projects">
+      <!-- ============ RESEARCH ============ -->
+      <section class="projects" id="research">
         <h2>Research</h2>
-        <ul>
-          <li>
-            <div class="collapsible" onclick="toggleProject(this)">
-              <span class="project-title">
-                Quantum Optics Group, <b>Harvey Mudd College Spring 2024 - Present</b>
-              </span>
-              <span class="toggle-icon">+</span>
-            </div>
-            <!-- Hidden content container -->
-            <div class="project-content">
-              <p>
-                The HMC Quantum Optics group (or Lynn Lab), led by Professor
-                Theresa Lynn, investigates quantum communication protocols for
-                polarization-entangled two photon systems. Summer 2024, I
-                focused on developing a two-step adaptive choice method for
-                determining the entanglement of two photons via a linear optical
-                apparatus (manuscript in progress). Currently, I work on applications of exchange symmetry in qudit quantum computing. <br>Check out the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page for more details on my contributions and see 
-                <a
-                  href="https://www.hmc.edu/physics/faculty-staff/lynn/" style="color: blue; text-decoration: underline;" target="_blank"
-                >
-                  Professor Lynn's page
-                </a> for a more general overview of the group's work.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible" onclick="toggleProject(this)">
-              <span class="project-title">
-                Quantum Materials and Nanodevice Laboratory,
-                <b>San Francisco State University Summer 2023</b>
-              </span>
-              <span class="toggle-icon">+</span>
-            </div>
-            <!-- Hidden content container -->
-            <div class="project-content">
-              <p>
-                The Quantum Materials Lab was led by the late Professor
-                AKM Newaz at SFSU. As an undergraduate researcher, I studied
-                shifts in the Raman peaks of Molybdenum Disulfide when developed
-                on gold substrate in ambient vs. glove box environments. Using
-                Raman spectrometry and Python for data analysis, we confirmed
-                differences in biaxial strain and doping between the two
-                preparation situations, showing potential impacts for solar
-                and biomedical applications. See the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page for more details.
-              </p>
-            </div>
-          </li>
-        </ul>
+
+        <!-- Boston College -->
+        <article class="entry">
+          <h3>Ph.D. Research, <b>Boston College</b></h3>
+          <p class="entry-meta">Fall 2026 – Present · Advisor: Benedetta Flebus</p>
+          <p>Quantum sensing and quantum many-body theory.</p>
+        </article>
+
+        <!-- MITRE -->
+        <article class="entry">
+          <h3>Quantum Theory &amp; Quantum Memories Intern, <b>MITRE</b></h3>
+          <p class="entry-meta">May 2025 – August 2026 · Bedford, MA</p>
+          <p>Theory and simulation for quantum memories and integrated photonics.</p>
+        </article>
+
+        <!-- HMC Quantum Optics -->
+        <article class="entry">
+          <h3>Quantum Optics Group (Lynn Lab), <b>Harvey Mudd College</b></h3>
+          <p class="entry-meta">January 2024 – May 2026 · Advisor: Theresa Lynn</p>
+          <p>
+            Senior thesis and experiments on adaptive entanglement witnessing: certifying that an
+            unknown two-photon state is entangled using far fewer measurements than full state
+            tomography. Awarded HMC’s Thomas B. Brown Memorial Award for Senior Research in Physics.
+          </p>
+          <div class="button-container">
+            <a href="https://arxiv.org/abs/2610.16018" class="button small" target="_blank" rel="noopener">Paper (arXiv)</a>
+            <a href="research/qo_group/Gruber_Lev_Thesis_2026.pdf" class="button small" target="_blank" rel="noopener">Senior Thesis</a>
+            <a href="research/qo_group/2025_APS_experimental_poster.pdf" class="button small" target="_blank" rel="noopener">APS 2025 Poster</a>
+            <a href="https://www.hmc.edu/physics/faculty-staff/lynn/" class="button small" target="_blank" rel="noopener">Lab Website</a>
+          </div>
+        </article>
+
+        <!-- SFSU -->
+        <article class="entry">
+          <h3>Quantum Materials and Nanodevice Laboratory, <b>San Francisco State University</b></h3>
+          <p class="entry-meta">Summer 2023 · Advisor: the late AKM Newaz</p>
+          <p>
+            Fabricated monolayer MoS<sub>2</sub> samples in ambient and glove box conditions and used
+            Raman spectroscopy to show how the preparation environment changes their vibrational
+            modes.
+          </p>
+          <div class="button-container">
+            <a href="https://sites.google.com/site/newazsfsu1/" class="button small" target="_blank" rel="noopener">Lab Website</a>
+          </div>
+        </article>
       </section>
 
-      <!-- Publications / Presentations Section -->
-    <section class="projects">
+      <!-- ============ PUBLICATIONS & PRESENTATIONS ============ -->
+      <section class="projects" id="publications">
         <h2>Publications &amp; Presentations</h2>
         <ul class="pub-list">
           <li>
-            <strong>L. Gruber</strong>, S. Kerr, E. Hernandez, P. Navarro, T. W. Lynn<br>
-            <em>Experimental Demonstration of Adaptive Entanglement Witnessing for Two-Qubit Pure and Mixed States</em><br>
-            APS Global Summit 2025, Anaheim, CA, March 2025. Poster 215.
+            <strong>L. Gruber</strong>, R. Haapala, E. Thadhani, P. Navarro, E. Yang, B. Hartley,
+            R. Verghese, O. Scholin, I. Godoy, S. Kerr, B. Mendoza, A. Roberson, and T. W. Lynn<br />
+            <em>Adaptive Entanglement Witnessing for Two-Qubit Systems</em><br />
+            Submitted to <i>Physical Review A</i>.
+            <a href="https://arxiv.org/abs/2610.16018" class="text-link" target="_blank" rel="noopener">arXiv:2610.16018</a>
           </li>
           <li>
-            <strong>L. Gruber</strong>, B. Hartley, S. Kerr, P. Navarro, A. Roberson, O. Scholin, R. Verghese, Q. Yang, T. W. Lynn<br>
-            <em>Adaptive Two-Qubit Entanglement Witnessing</em>, manuscript in preparation.
+            <strong>L. Gruber</strong><br />
+            <em>An Information-Theoretic Approach to Adaptive Entanglement Witnessing</em><br />
+            B.S. Thesis, Harvey Mudd College, 2026.
+            <a href="research/qo_group/Gruber_Lev_Thesis_2026.pdf" class="text-link" target="_blank" rel="noopener">PDF</a>
+          </li>
+          <li>
+            <strong>L. Gruber</strong>, S. Kerr, E. Hernandez, P. Navarro, T. W. Lynn<br />
+            <em>Experimental Demonstration of Adaptive Entanglement Witnessing for Two-Qubit Pure and Mixed States</em><br />
+            APS Global Summit 2025, Anaheim, CA, March 2025. Poster 215.
+            <a href="research/qo_group/2025_APS_experimental_poster.pdf" class="text-link" target="_blank" rel="noopener">PDF</a>
           </li>
         </ul>
       </section>
 
-  <section class="projects">
-      <!-- Projects Section -->
+      <!-- ============ AWARDS ============ -->
       <section class="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <div class="collapsible" onclick="toggleProject(this)">
-                    <span class="project-title">
-                    Modeling Bio-Materials to Second Order
-                    <b>Fall 2024</b>
-                    </span>
-                    <span class="toggle-icon">+</span>
-                </div>
-                <!-- Hidden content container -->
-                <div class="project-content">
-                    <p>
-                    Material properties of a spring determine the proportionality between its restorative force and displacement. In the large strain limit, certain biological materials behave with growing stiffness; collaborator Charlie Schofield and I approximated this behavior using a second order correction term to Hooke's law. We then simulated a simplified biological system by putting massless, non-linear springs in series in between masses representing joints. Using Python and Mathematica, we evaluated the non-analytically solvable equations of motion to view chaotic behavior while varying spring constants, masses, and initial conditions. See the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page for more details, or read the write up/code below.
-                    </p>
-                    <div class="button-container">
-                    <a
-                        href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf"
-                        class="button"
-                        target="_blank"
-                    >
-                        Read the Write Up
-                    </a>
-                    <a
-                        href="https://github.com/levgru/phys111_gruber_schofield/"
-                        class="button"
-                        target="_blank"
-                    >
-                        View Code on GitHub
-                    </a>
-                    </div>
-                    <div class="image-container">
-                    <img
-                        src="projects/biological_springs/normal_mode.png"
-                        alt="Bio Springs"
-                        class="outlined-image"
-                    />
-                    <figcaption>
-                        <i>Figure 1.</i> Classical non-chaotic system analog using equal masses and spring constants. Initial positions are both zero relative to equilibrium, the first mass' velocity is zero and the second is 0.5 m/s towards the first mass.
-                    </figcaption>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible" onclick="toggleProject(this)">
-                <span class="project-title">
-                    Demonstrating Ammonia SDMP via Variational Quantum Eigensolvers,
-                    <b>Spring 2024</b>
-                </span>
-                <span class="toggle-icon">+</span>
-                </div>
-                <!-- Hidden content container -->
-                <div class="project-content">
-                <p>
-                    Variational quantum eigensolvers (VQEs) are a type of algorithm
-                    that map a hamiltonian to a quantum circuit to calculate the ground
-                    state energy of a system. VQEs are strong due to them using
-                    classical and quantum computers for their respective
-                    strengths--the first for optimization and the second for measuring
-                    the qubits in our quantum circuit. <br />I calculated the ground
-                    state energies of ammonia NH<sub>3</sub> in various configurations,
-                    demonstrating a symmetric dual minima potential (SDMP) between two
-                    states using Qiskit VQE implementations and the IBM Cloud Platform.
-                    Figure 1 includes results from both a noiseless and noisy quantum
-                    computer simulator. See the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page or links below for a longer write up,
-                    results using IBM's quantum computer in Kyoto, an example
-                    calculation of H<sub>2</sub> ground state energy,
-                    and all code involved.
-                </p>
-                <div class="button-container">
-                    <a
-                    href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf"
-                    class="button"
-                    target="_blank"
-                    >
-                    Read the Write Up
-                    </a>
-                    <a
-                    href="https://github.com/levgru/lg_nh3_vqe_project/"
-                    class="button"
-                    target="_blank"
-                    >
-                    View Code on GitHub
-                    </a>
-                </div>
-                <div class="image-container">
-                    <img
-                    src="projects/nh3_sdmp/example_plot.png"
-                    alt="Ammonia SDMP"
-                    class="outlined-image"
-                    />
-                    <figcaption>
-                    <i>Figure 1.</i> Ammonia ground state energy as a function of
-                    nitrogen distance from planar hydrogens.
-                    </figcaption>
-                </div>
-                </div>
-            </li>
-            <li>
-              <div class="collapsible" onclick="toggleProject(this)">
-              <span class="project-title">
-                A Physical and Chemical Simulation for Estimating Long-Term Stair Wear (COMAP MCM 2025),
-                  <b>Jan 23-27, 2025</b>
-              </span>
-              <span class="toggle-icon">+</span>
-              </div>
-              <!-- Hidden content container -->
-              <div class="project-content">
-              <p>
-                The COMAP Mathematical Contest in Modeling (MCM) is a four day competition in which teams of three model a real world problem and write a paper on their work. For the 2025 contest, we built a physical and chemical simulation to model stair wear over time, providing archaeologists analyzing a historical set of stairs the tools to learn about the stair's traffic patterns. For force (human steps over time) we used a 2D Generalized Maxwell Model, and for chemical erosion from precipitation a set of linear polynomials fit from a Gaussian Mixture Model. See the <a href="projects_research.html" style="color: blue; text-decoration: underline;">Research and Projects</a> page or links below for more info!
-              </p>
-              <div class="button-container">
-                  <a
-                  href="https://github.com/edonson2016/MCM2025CEL/blob/main/2528481.pdf"
-                  class="button"
-                  target="_blank"
-                  >
-                  Read the Write Up
-                  </a>
-                  <a
-                  href="https://github.com/edonson2016/MCM2025CEL"
-                  class="button"
-                  target="_blank"
-                  >
-                  View Code on GitHub
-                  </a>
-              </div>
-              <div class="image-container">
-                  <img
-                  src="projects/mcm_2025/Module Flowchart.png"
-                  alt="module flow"
-                  class="outlined-image"
-                  />
-                  <figcaption>
-                    <i>Figure 1.</i> A general model overview--shows input and outputs for the model.
-                    </figcaption>
-              </div>
-              </div>
+        <h2>Awards &amp; Honors</h2>
+        <ul class="pub-list awards-list">
+          <li><strong>Thomas B. Brown Memorial Award</strong> for Senior Research in Physics, Harvey Mudd College, 2026</li>
+          <li><strong>NSF Graduate Research Fellowship</strong> Honorable Mention, 2026</li>
+          <li><strong>Astronaut Scholarship</strong> Nominee, 2025</li>
+          <li><strong>Edison STEM Scholar</strong>, Edison International, 2025–2026</li>
+        </ul>
+      </section>
+
+      <!-- ============ EARLIER PROJECTS ============ -->
+      <section class="projects" id="projects">
+        <h2>Earlier Projects</h2>
+        <ul class="earlier-list">
+          <li>
+            <span class="earlier-title">Generating Biased Random Entanglement Witnesses</span>
+            <span class="earlier-date">May 2025</span><br />
+            Research proposal on using random matrix theory and representation theory to generate
+            entanglement witnesses biased by partial information about an unknown state.
+          </li>
+          <li>
+            <span class="earlier-title">Simulating Long-Term Stair Wear (COMAP MCM 2025)</span>
+            <span class="earlier-date">January 2025</span><br />
+            Physical and chemical model of stone stair wear for archaeologists, using a 2D Generalized
+            Maxwell Model and Gaussian Mixture Model–based erosion.
+            <span class="earlier-links">
+              <a href="https://github.com/edonson2016/MCM2025CEL/blob/main/2528481.pdf" class="text-link" target="_blank" rel="noopener">Paper</a> ·
+              <a href="https://github.com/edonson2016/MCM2025CEL" class="text-link" target="_blank" rel="noopener">Code</a>
+            </span>
+          </li>
+          <li>
+            <span class="earlier-title">Modeling Bio-Materials to Second Order</span>
+            <span class="earlier-date">Fall 2024</span><br />
+            Chaotic dynamics of masses joined by non-linear springs, a simple model of polymeric
+            biological materials.
+            <span class="earlier-links">
+              <a href="https://github.com/levgru/phys111_gruber_schofield/blob/f5ca2cf5974bc209ce138e78e04414e6662fc75a/final-writeup.pdf" class="text-link" target="_blank" rel="noopener">Write-up</a> ·
+              <a href="https://github.com/levgru/phys111_gruber_schofield/" class="text-link" target="_blank" rel="noopener">Code</a>
+            </span>
+          </li>
+          <li>
+            <span class="earlier-title">Ammonia Umbrella Inversion via Variational Quantum Eigensolvers</span>
+            <span class="earlier-date">Spring 2024</span><br />
+            Calculated the symmetric double-well potential of NH<sub>3</sub> with Qiskit VQEs on
+            simulated and real (IBM Kyoto) quantum computers.
+            <span class="earlier-links">
+              <a href="https://github.com/levgru/levgru.github.io/blob/main/projects/nh3_sdmp/lg_64_paper.pdf" class="text-link" target="_blank" rel="noopener">Write-up</a> ·
+              <a href="https://github.com/levgru/lg_nh3_vqe_project/" class="text-link" target="_blank" rel="noopener">Code</a>
+            </span>
           </li>
         </ul>
       </section>
     </main>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ============ FOOTER ============ -->
   <footer>
-    <p>&copy; 2025 Lev Gruber</p>
+    <p>&copy; <span class="current-year">2026</span> Lev Gruber</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Toggles the collapsible research/projects sections
-    function toggleProject(element) {
-      const content = element.nextElementSibling;
-      const icon = element.querySelector(".toggle-icon");
-      if (content.style.display === "block") {
-        content.style.display = "none";
-        icon.style.transform = "rotate(0deg)";
-      } else {
-        content.style.display = "block";
-        icon.style.transform = "rotate(180deg)";
-      }
-    }
-
-    // Toggles the hamburger menu + the popout
-    function toggleMenu() {
-      const hamburger = document.querySelector(".hamburger");
-      const popoutMenu = document.getElementById("popoutMenu");
-
-      // Toggle the .open class on the hamburger to morph into a triangle
-      hamburger.classList.toggle("open");
-
-      // Toggle the popout menu's .show class
-      popoutMenu.classList.toggle("show");
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
