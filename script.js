@@ -1,5 +1,5 @@
 // Shared behavior for every page on the site:
-// mobile menu, footer year, and the contact-form "thank you" message.
+// mobile menu and footer year.
 
 document.addEventListener("DOMContentLoaded", function () {
   // ---------- Footer year (updates itself every January) ----------
@@ -31,11 +31,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") setMenu(false);
     });
-  }
-
-  // ---------- Contact page: show "thank you" after the form is sent ----------
-  var formSuccess = document.getElementById("formSuccess");
-  if (formSuccess && new URLSearchParams(window.location.search).has("submitted")) {
-    formSuccess.style.display = "block";
   }
 });
