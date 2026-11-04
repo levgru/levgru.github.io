@@ -348,31 +348,6 @@ main {
   margin-bottom: 0.5em;
 }
 
-/* Compact "Earlier Projects" list (home page) */
-.earlier-list li {
-  margin-bottom: 0.9em;
-  font-size: 0.95rem;
-}
-
-.earlier-title {
-  font-weight: 600;
-}
-
-.earlier-date {
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-left: 0.35rem;
-}
-
-.earlier-links {
-  white-space: nowrap;
-  margin-left: 0.25rem;
-}
-
-.earlier-more {
-  font-size: 0.95rem;
-}
-
 /* ===============================
    6) ENTRIES + BUTTONS
 =============================== */
